@@ -7,28 +7,34 @@ import retrofit2.http.*;
 
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import okhttp3.MultipartBody;
 
+import in.co.booksnmore.api.model.AddressInput;
 import in.co.booksnmore.api.model.AdminActionInput;
 import in.co.booksnmore.api.model.AdminBookByIdData;
 import in.co.booksnmore.api.model.AdminBookListData;
 import in.co.booksnmore.api.model.AdminEditBookByIdBody;
 import in.co.booksnmore.api.model.AdminLoginBody;
+import in.co.booksnmore.api.model.AdminMemberInput;
 import in.co.booksnmore.api.model.BaseError;
 import in.co.booksnmore.api.model.BookListBody;
-import in.co.booksnmore.api.model.CreateMemberInput;
+import in.co.booksnmore.api.model.CashInput;
+import in.co.booksnmore.api.model.CategoriesData;
+import in.co.booksnmore.api.model.DeliveryCostData;
 import in.co.booksnmore.api.model.ErrorData;
 import in.co.booksnmore.api.model.GetAuthKeyRespone;
 import in.co.booksnmore.api.model.InlineResponse200;
 import in.co.booksnmore.api.model.ManifestData;
-import in.co.booksnmore.api.model.MemberAction;
 import in.co.booksnmore.api.model.MemberActionInput;
+import in.co.booksnmore.api.model.MemberData;
+import in.co.booksnmore.api.model.MemberDetailsInput;
+import in.co.booksnmore.api.model.PasswordUpdateInput;
 import in.co.booksnmore.api.model.PlanActionInput;
 import in.co.booksnmore.api.model.PlanInfo;
+import in.co.booksnmore.api.model.ReportInput;
 import in.co.booksnmore.api.model.SearchBody;
 import in.co.booksnmore.api.model.SearchData;
 import in.co.booksnmore.api.model.SubstituteBookData;
-import in.co.booksnmore.api.model.User;
+import in.co.booksnmore.api.model.TransactionReport;
 import in.co.booksnmore.api.model.UserLoginBody;
 import in.co.booksnmore.api.model.VerifyKeyBody;
 
@@ -76,8 +82,36 @@ public interface DefaultApi {
 
   /**
    * 
+   * Add Delivery
+   * @param body  (optional)
+   * @return Call&lt;Void&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("addDelivery")
+  Call<Void> postAddDelivery(
+                    @retrofit2.http.Body VerifyKeyBody body    
+  );
+
+  /**
+   * 
+   * Admin Add delivery
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/addDelivery")
+  Call<MemberData> postAdminAddDelivery(
+                    @retrofit2.http.Body AdminMemberInput body    
+  );
+
+  /**
+   * 
    * All books delivered
-   * @param verifyKeyBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -85,13 +119,13 @@ public interface DefaultApi {
   })
   @POST("admin/allDelivered")
   Call<BaseError> postAdminAllDelivered(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * get a book by id
-   * @param memberActionInput  (optional)
+   * @param body  (optional)
    * @return Call&lt;AdminBookByIdData&gt;
    */
   @Headers({
@@ -99,41 +133,111 @@ public interface DefaultApi {
   })
   @POST("admin/bookById")
   Call<AdminBookByIdData> postAdminBookById(
-    @retrofit2.http.Body MemberActionInput memberActionInput
+                    @retrofit2.http.Body MemberActionInput body    
+  );
+
+  /**
+   * 
+   * Admin Borrow
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/borrow")
+  Call<MemberData> postAdminBorrow(
+                    @retrofit2.http.Body AdminActionInput body    
+  );
+
+  /**
+   * 
+   * Admin Borrow
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/borrow")
+  Call<MemberData> postAdminBorrow(
+                    @retrofit2.http.Body AdminActionInput body    
+  );
+
+  /**
+   * 
+   * Admin Cash In
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/cash")
+  Call<MemberData> postAdminCash(
+                    @retrofit2.http.Body CashInput body    
+  );
+
+  /**
+   * 
+   * Admin Create Member
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/createMember")
+  Call<MemberData> postAdminCreateMember(
+                    @retrofit2.http.Body MemberDetailsInput body    
   );
 
   /**
    * 
    * Admin Create Plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;Void&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("admin/createPlan")
-  Call<Void> postAdminCreatePlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postAdminCreatePlan(
+                    @retrofit2.http.Body PlanActionInput body    
+  );
+
+  /**
+   * 
+   * Admin Create Plan
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/createPlan")
+  Call<MemberData> postAdminCreatePlan(
+                    @retrofit2.http.Body PlanActionInput body    
   );
 
   /**
    * 
    * Admin delete plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("admin/deletePlan")
-  Call<BaseError> postAdminDeletePlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postAdminDeletePlan(
+                    @retrofit2.http.Body PlanActionInput body    
   );
 
   /**
    * 
    * Delivered a book
-   * @param adminActionInput  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -141,13 +245,13 @@ public interface DefaultApi {
   })
   @POST("admin/delivered")
   Call<BaseError> postAdminDelivered(
-    @retrofit2.http.Body AdminActionInput adminActionInput
+                    @retrofit2.http.Body AdminActionInput body    
   );
 
   /**
    * 
    * Delivery failed for a book
-   * @param adminActionInput  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -155,13 +259,13 @@ public interface DefaultApi {
   })
   @POST("admin/deliveryFailed")
   Call<BaseError> postAdminDeliveryFailed(
-    @retrofit2.http.Body AdminActionInput adminActionInput
+                    @retrofit2.http.Body AdminActionInput body    
   );
 
   /**
    * 
    * edit a book
-   * @param adminEditBookByIdBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -169,13 +273,27 @@ public interface DefaultApi {
   })
   @POST("admin/editBookById")
   Call<BaseError> postAdminEditBookById(
-    @retrofit2.http.Body AdminEditBookByIdBody adminEditBookByIdBody
+                    @retrofit2.http.Body AdminEditBookByIdBody body    
+  );
+
+  /**
+   * 
+   * Admin Edit Member
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/editMember")
+  Call<MemberData> postAdminEditMember(
+                    @retrofit2.http.Body MemberDetailsInput body    
   );
 
   /**
    * 
    * Book found 
-   * @param adminActionInput  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -183,13 +301,13 @@ public interface DefaultApi {
   })
   @POST("admin/found")
   Call<BaseError> postAdminFound(
-    @retrofit2.http.Body AdminActionInput adminActionInput
+                    @retrofit2.http.Body AdminActionInput body    
   );
 
   /**
    * 
    * Get Books
-   * @param bookListBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;AdminBookListData&gt;
    */
   @Headers({
@@ -197,13 +315,41 @@ public interface DefaultApi {
   })
   @POST("admin/getBooks")
   Call<AdminBookListData> postAdminGetBooks(
-    @retrofit2.http.Body BookListBody bookListBody
+                    @retrofit2.http.Body BookListBody body    
+  );
+
+  /**
+   * 
+   * Admin Get Delivery Cost
+   * @param body  (optional)
+   * @return Call&lt;DeliveryCostData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/getDeliveryCost")
+  Call<DeliveryCostData> postAdminGetDeliveryCost(
+                    @retrofit2.http.Body AddressInput body    
+  );
+
+  /**
+   * 
+   * Admin Get Member
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/getMember")
+  Call<MemberData> postAdminGetMember(
+                    @retrofit2.http.Body AdminMemberInput body    
   );
 
   /**
    * 
    * login as an admin
-   * @param adminLoginBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -211,13 +357,27 @@ public interface DefaultApi {
   })
   @POST("admin/login")
   Call<BaseError> postAdminLogin(
-    @retrofit2.http.Body AdminLoginBody adminLoginBody
+                    @retrofit2.http.Body AdminLoginBody body    
+  );
+
+  /**
+   * 
+   * Admin logout
+   * @param body  (optional)
+   * @return Call&lt;BaseError&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/logout")
+  Call<BaseError> postAdminLogout(
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * Generate Manifest
-   * @param verifyKeyBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;ManifestData&gt;
    */
   @Headers({
@@ -225,27 +385,27 @@ public interface DefaultApi {
   })
   @POST("admin/manifest")
   Call<ManifestData> postAdminManifest(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * Admin Modify Plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("admin/modifyPlan")
-  Call<BaseError> postAdminModifyPlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postAdminModifyPlan(
+                    @retrofit2.http.Body PlanActionInput body    
   );
 
   /**
    * 
    * Pickup Failed for a book
-   * @param adminActionInput  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -253,13 +413,13 @@ public interface DefaultApi {
   })
   @POST("admin/pickupFailed")
   Call<BaseError> postAdminPickupFailed(
-    @retrofit2.http.Body AdminActionInput adminActionInput
+                    @retrofit2.http.Body AdminActionInput body    
   );
 
   /**
    * 
    * Admin Ready to dispatch books
-   * @param verifyKeyBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;AdminBookListData&gt;
    */
   @Headers({
@@ -267,13 +427,13 @@ public interface DefaultApi {
   })
   @POST("admin/readyToDispatchBooks")
   Call<AdminBookListData> postAdminReadyToDispatchBooks(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * List of ready to return books
-   * @param verifyKeyBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;AdminBookListData&gt;
    */
   @Headers({
@@ -281,13 +441,13 @@ public interface DefaultApi {
   })
   @POST("admin/readyToReturnBooks")
   Call<AdminBookListData> postAdminReadyToReturn(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * Admin Reserved Books
-   * @param verifyKeyBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;AdminBookListData&gt;
    */
   @Headers({
@@ -295,13 +455,27 @@ public interface DefaultApi {
   })
   @POST("admin/reservedBooks")
   Call<AdminBookListData> postAdminReservedBooks(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+                    @retrofit2.http.Body VerifyKeyBody body    
+  );
+
+  /**
+   * 
+   * Admin Return
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/return")
+  Call<MemberData> postAdminReturn(
+                    @retrofit2.http.Body AdminActionInput body    
   );
 
   /**
    * 
    * Book returned by Member
-   * @param adminActionInput  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -309,27 +483,27 @@ public interface DefaultApi {
   })
   @POST("admin/returned")
   Call<BaseError> postAdminReturned(
-    @retrofit2.http.Body AdminActionInput adminActionInput
+                    @retrofit2.http.Body AdminActionInput body    
   );
 
   /**
    * 
    * Admin Revive Plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("admin/revivePlan")
-  Call<BaseError> postAdminRevivePlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postAdminRevivePlan(
+                    @retrofit2.http.Body PlanActionInput body    
   );
 
   /**
    * 
    * Substitute Books
-   * @param substituteBookData  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -337,27 +511,55 @@ public interface DefaultApi {
   })
   @POST("admin/substitute")
   Call<BaseError> postAdminSubstitute(
-    @retrofit2.http.Body SubstituteBookData substituteBookData
+                    @retrofit2.http.Body SubstituteBookData body    
   );
 
   /**
    * 
    * Admin Suspend Plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("admin/suspendPlan")
-  Call<BaseError> postAdminSuspendPlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postAdminSuspendPlan(
+                    @retrofit2.http.Body PlanActionInput body    
+  );
+
+  /**
+   * 
+   * Admin Transaction Report
+   * @param body  (optional)
+   * @return Call&lt;TransactionReport&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/transactionReport")
+  Call<TransactionReport> postAdminTransactionReport(
+                    @retrofit2.http.Body ReportInput body    
+  );
+
+  /**
+   * 
+   * Admin Update Password
+   * @param body  (optional)
+   * @return Call&lt;BaseError&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/updatePassword")
+  Call<BaseError> postAdminUpdatePassword(
+                    @retrofit2.http.Body PasswordUpdateInput body    
   );
 
   /**
    * 
    * verify an admin auth key
-   * @param verifyKeyBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -365,83 +567,125 @@ public interface DefaultApi {
   })
   @POST("admin/verifyKey")
   Call<BaseError> postAdminVerifyKey(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+                    @retrofit2.http.Body VerifyKeyBody body    
+  );
+
+  /**
+   * 
+   * Browse Library
+   * @param body  (optional)
+   * @return Call&lt;CategoriesData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("browseLibrary")
+  Call<CategoriesData> postBrowseLibrary(
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * cacnels a request for ready to return book
-   * @param memberActionInput  (optional)
-   * @return Call&lt;MemberAction&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("cancelReadyToReturnBook")
-  Call<MemberAction> postCancelReadyToReturnBook(
-    @retrofit2.http.Body MemberActionInput memberActionInput
+  Call<MemberData> postCancelReadyToReturnBook(
+                    @retrofit2.http.Body MemberActionInput body    
   );
 
   /**
    * 
    * cancels a reservation
-   * @param memberActionInput  (optional)
-   * @return Call&lt;MemberAction&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("cancelReserveBook")
-  Call<MemberAction> postCancelReserveBook(
-    @retrofit2.http.Body MemberActionInput memberActionInput
+  Call<MemberData> postCancelReserveBook(
+                    @retrofit2.http.Body MemberActionInput body    
   );
 
   /**
    * 
    * create a new member
-   * @param createMemberInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("createMember")
-  Call<BaseError> postCreateMember(
-    @retrofit2.http.Body CreateMemberInput createMemberInput
+  Call<MemberData> postCreateMember(
+                    @retrofit2.http.Body MemberDetailsInput body    
   );
 
   /**
    * 
    * creates a plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("createPlan")
-  Call<BaseError> postCreatePlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postCreatePlan(
+                    @retrofit2.http.Body PlanActionInput body    
   );
 
   /**
    * 
    * Delete Plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("deletePlan")
-  Call<BaseError> postDeletePlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postDeletePlan(
+                    @retrofit2.http.Body PlanActionInput body    
+  );
+
+  /**
+   * 
+   * Edit Member
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("editMember")
+  Call<MemberData> postEditMember(
+                    @retrofit2.http.Body MemberDetailsInput body    
+  );
+
+  /**
+   * 
+   * Get Delivery Cost
+   * @param body  (optional)
+   * @return Call&lt;DeliveryCostData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("getDeliveryCost")
+  Call<DeliveryCostData> postGetDeliveryCost(
+                    @retrofit2.http.Body AddressInput body    
   );
 
   /**
    * 
    * get hot books
-   * @param verifyKeyBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;InlineResponse200&gt;
    */
   @Headers({
@@ -449,27 +693,27 @@ public interface DefaultApi {
   })
   @POST("getHotBooks")
   Call<InlineResponse200> postGetHotBooks(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * get data for home screen
-   * @param verifyKeyBody  (optional)
-   * @return Call&lt;User&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("getMember")
-  Call<User> postGetMember(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+  Call<MemberData> postGetMember(
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * Login
-   * @param userLoginBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -477,69 +721,83 @@ public interface DefaultApi {
   })
   @POST("login")
   Call<BaseError> postLogin(
-    @retrofit2.http.Body UserLoginBody userLoginBody
+                    @retrofit2.http.Body UserLoginBody body    
+  );
+
+  /**
+   * 
+   * Logout
+   * @param body  (optional)
+   * @return Call&lt;BaseError&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("logout")
+  Call<BaseError> postLogout(
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
   /**
    * 
    * Modify Plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("modifyPlan")
-  Call<BaseError> postModifyPlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postModifyPlan(
+                    @retrofit2.http.Body PlanActionInput body    
   );
 
   /**
    * 
    * marks a book as ready to return
-   * @param memberActionInput  (optional)
-   * @return Call&lt;MemberAction&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("readyToReturnBook")
-  Call<MemberAction> postReadyToReturnBook(
-    @retrofit2.http.Body MemberActionInput memberActionInput
+  Call<MemberData> postReadyToReturnBook(
+                    @retrofit2.http.Body MemberActionInput body    
   );
 
   /**
    * 
    * reserves a book
-   * @param memberActionInput  (optional)
-   * @return Call&lt;MemberAction&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("reserveBook")
-  Call<MemberAction> postReserveBook(
-    @retrofit2.http.Body MemberActionInput memberActionInput
+  Call<MemberData> postReserveBook(
+                    @retrofit2.http.Body MemberActionInput body    
   );
 
   /**
    * 
    * Revive Plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("revivePlan")
-  Call<BaseError> postRevivePlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postRevivePlan(
+                    @retrofit2.http.Body PlanActionInput body    
   );
 
   /**
    * 
    * search
-   * @param searchBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;SearchData&gt;
    */
   @Headers({
@@ -547,27 +805,41 @@ public interface DefaultApi {
   })
   @POST("search")
   Call<SearchData> postSearch(
-    @retrofit2.http.Body SearchBody searchBody
+                    @retrofit2.http.Body SearchBody body    
   );
 
   /**
    * 
    * Suspend Plan
-   * @param planActionInput  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("suspendPlan")
-  Call<BaseError> postSuspendPlan(
-    @retrofit2.http.Body PlanActionInput planActionInput
+  Call<MemberData> postSuspendPlan(
+                    @retrofit2.http.Body PlanActionInput body    
+  );
+
+  /**
+   * 
+   * Update Password
+   * @param body  (optional)
+   * @return Call&lt;BaseError&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("updatePassword")
+  Call<BaseError> postUpdatePassword(
+                    @retrofit2.http.Body PasswordUpdateInput body    
   );
 
   /**
    * 
    * verify an auth key
-   * @param verifyKeyBody  (optional)
+   * @param body  (optional)
    * @return Call&lt;BaseError&gt;
    */
   @Headers({
@@ -575,7 +847,7 @@ public interface DefaultApi {
   })
   @POST("verifyKey")
   Call<BaseError> postVerifyKey(
-    @retrofit2.http.Body VerifyKeyBody verifyKeyBody
+                    @retrofit2.http.Body VerifyKeyBody body    
   );
 
 }

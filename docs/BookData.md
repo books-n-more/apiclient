@@ -1,24 +1,13 @@
-
-
 # BookData
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **BigDecimal** |  | 
+**id** | [**BigDecimal**](BigDecimal.md) |  | 
 **title** | **String** |  | 
 **author** | **String** |  | 
-**borrowedOn** | **BigDecimal** |  |  [optional]
+**borrowedOn** | **String** |  |  [optional]
 **canCancel** | **Boolean** |  |  [optional]
 **shelfCode** | **String** |  |  [optional]
-**borrowerId** | **BigDecimal** |  |  [optional]
-**status** | **BigDecimal** |  |  [optional]
-
-
-## Implemented Interfaces
-
-* Parcelable
-
-
+**borrowerId** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**status** | [**BigDecimal**](BigDecimal.md) |  |  [optional]

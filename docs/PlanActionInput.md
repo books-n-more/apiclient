@@ -1,10 +1,6 @@
-
-
 # PlanActionInput
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authKey** | **String** |  | 
@@ -12,10 +8,3 @@ Name | Type | Description | Notes
 **memberId** | **String** |  |  [optional]
 **planDuration** | **String** |  |  [optional]
 **planSize** | **String** |  |  [optional]
-
-
-## Implemented Interfaces
-
-* Parcelable
-
-

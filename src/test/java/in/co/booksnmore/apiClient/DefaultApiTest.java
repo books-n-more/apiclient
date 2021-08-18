@@ -1,26 +1,33 @@
 package in.co.booksnmore.apiClient;
 
 import in.co.booksnmore.api.ApiClient;
+import in.co.booksnmore.api.model.AddressInput;
 import in.co.booksnmore.api.model.AdminActionInput;
 import in.co.booksnmore.api.model.AdminBookByIdData;
 import in.co.booksnmore.api.model.AdminBookListData;
 import in.co.booksnmore.api.model.AdminEditBookByIdBody;
 import in.co.booksnmore.api.model.AdminLoginBody;
+import in.co.booksnmore.api.model.AdminMemberInput;
 import in.co.booksnmore.api.model.BaseError;
 import in.co.booksnmore.api.model.BookListBody;
-import in.co.booksnmore.api.model.CreateMemberInput;
+import in.co.booksnmore.api.model.CashInput;
+import in.co.booksnmore.api.model.CategoriesData;
+import in.co.booksnmore.api.model.DeliveryCostData;
 import in.co.booksnmore.api.model.ErrorData;
 import in.co.booksnmore.api.model.GetAuthKeyRespone;
 import in.co.booksnmore.api.model.InlineResponse200;
 import in.co.booksnmore.api.model.ManifestData;
-import in.co.booksnmore.api.model.MemberAction;
 import in.co.booksnmore.api.model.MemberActionInput;
+import in.co.booksnmore.api.model.MemberData;
+import in.co.booksnmore.api.model.MemberDetailsInput;
+import in.co.booksnmore.api.model.PasswordUpdateInput;
 import in.co.booksnmore.api.model.PlanActionInput;
 import in.co.booksnmore.api.model.PlanInfo;
+import in.co.booksnmore.api.model.ReportInput;
 import in.co.booksnmore.api.model.SearchBody;
 import in.co.booksnmore.api.model.SearchData;
 import in.co.booksnmore.api.model.SubstituteBookData;
-import in.co.booksnmore.api.model.User;
+import in.co.booksnmore.api.model.TransactionReport;
 import in.co.booksnmore.api.model.UserLoginBody;
 import in.co.booksnmore.api.model.VerifyKeyBody;
 import org.junit.Before;
@@ -43,6 +50,7 @@ public class DefaultApiTest {
         api = new ApiClient().createService(DefaultApi.class);
     }
 
+
     /**
      * Your GET endpoint
      *
@@ -54,6 +62,7 @@ public class DefaultApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Your GET endpoint
      *
@@ -65,6 +74,7 @@ public class DefaultApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Your GET endpoint
      *
@@ -76,6 +86,7 @@ public class DefaultApiTest {
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -87,6 +98,33 @@ public class DefaultApiTest {
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Add Delivery
+     */
+    @Test
+    public void postAddDeliveryTest() {
+        VerifyKeyBody body = null;
+        // Void response = api.postAddDelivery(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Admin Add delivery
+     */
+    @Test
+    public void postAdminAddDeliveryTest() {
+        AdminMemberInput body = null;
+        // MemberData response = api.postAdminAddDelivery(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -94,11 +132,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminAllDeliveredTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // BaseError response = api.postAdminAllDelivered(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // BaseError response = api.postAdminAllDelivered(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -106,11 +145,51 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminBookByIdTest() {
-        MemberActionInput memberActionInput = null;
-        // AdminBookByIdData response = api.postAdminBookById(memberActionInput);
+        MemberActionInput body = null;
+        // AdminBookByIdData response = api.postAdminBookById(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Admin Borrow
+     */
+    @Test
+    public void postAdminBorrowTest() {
+        AdminActionInput body = null;
+        // MemberData response = api.postAdminBorrow(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Admin Cash In
+     */
+    @Test
+    public void postAdminCashTest() {
+        CashInput body = null;
+        // MemberData response = api.postAdminCash(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Admin Create Member
+     */
+    @Test
+    public void postAdminCreateMemberTest() {
+        MemberDetailsInput body = null;
+        // MemberData response = api.postAdminCreateMember(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -118,11 +197,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminCreatePlanTest() {
-        PlanActionInput planActionInput = null;
-        // api.postAdminCreatePlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postAdminCreatePlan(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -130,11 +210,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminDeletePlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postAdminDeletePlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postAdminDeletePlan(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -142,11 +223,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminDeliveredTest() {
-        AdminActionInput adminActionInput = null;
-        // BaseError response = api.postAdminDelivered(adminActionInput);
+        AdminActionInput body = null;
+        // BaseError response = api.postAdminDelivered(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -154,11 +236,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminDeliveryFailedTest() {
-        AdminActionInput adminActionInput = null;
-        // BaseError response = api.postAdminDeliveryFailed(adminActionInput);
+        AdminActionInput body = null;
+        // BaseError response = api.postAdminDeliveryFailed(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -166,11 +249,25 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminEditBookByIdTest() {
-        AdminEditBookByIdBody adminEditBookByIdBody = null;
-        // BaseError response = api.postAdminEditBookById(adminEditBookByIdBody);
+        AdminEditBookByIdBody body = null;
+        // BaseError response = api.postAdminEditBookById(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Admin Edit Member
+     */
+    @Test
+    public void postAdminEditMemberTest() {
+        MemberDetailsInput body = null;
+        // MemberData response = api.postAdminEditMember(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -178,11 +275,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminFoundTest() {
-        AdminActionInput adminActionInput = null;
-        // BaseError response = api.postAdminFound(adminActionInput);
+        AdminActionInput body = null;
+        // BaseError response = api.postAdminFound(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -190,11 +288,38 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminGetBooksTest() {
-        BookListBody bookListBody = null;
-        // AdminBookListData response = api.postAdminGetBooks(bookListBody);
+        BookListBody body = null;
+        // AdminBookListData response = api.postAdminGetBooks(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Admin Get Delivery Cost
+     */
+    @Test
+    public void postAdminGetDeliveryCostTest() {
+        AddressInput body = null;
+        // DeliveryCostData response = api.postAdminGetDeliveryCost(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Admin Get Member
+     */
+    @Test
+    public void postAdminGetMemberTest() {
+        AdminMemberInput body = null;
+        // MemberData response = api.postAdminGetMember(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -202,11 +327,25 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminLoginTest() {
-        AdminLoginBody adminLoginBody = null;
-        // BaseError response = api.postAdminLogin(adminLoginBody);
+        AdminLoginBody body = null;
+        // BaseError response = api.postAdminLogin(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Admin logout
+     */
+    @Test
+    public void postAdminLogoutTest() {
+        VerifyKeyBody body = null;
+        // BaseError response = api.postAdminLogout(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -214,11 +353,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminManifestTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // ManifestData response = api.postAdminManifest(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // ManifestData response = api.postAdminManifest(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -226,11 +366,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminModifyPlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postAdminModifyPlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postAdminModifyPlan(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -238,11 +379,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminPickupFailedTest() {
-        AdminActionInput adminActionInput = null;
-        // BaseError response = api.postAdminPickupFailed(adminActionInput);
+        AdminActionInput body = null;
+        // BaseError response = api.postAdminPickupFailed(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -250,11 +392,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminReadyToDispatchBooksTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // AdminBookListData response = api.postAdminReadyToDispatchBooks(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // AdminBookListData response = api.postAdminReadyToDispatchBooks(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -262,11 +405,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminReadyToReturnTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // AdminBookListData response = api.postAdminReadyToReturn(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // AdminBookListData response = api.postAdminReadyToReturn(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -274,11 +418,25 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminReservedBooksTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // AdminBookListData response = api.postAdminReservedBooks(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // AdminBookListData response = api.postAdminReservedBooks(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Admin Return
+     */
+    @Test
+    public void postAdminReturnTest() {
+        AdminActionInput body = null;
+        // MemberData response = api.postAdminReturn(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -286,11 +444,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminReturnedTest() {
-        AdminActionInput adminActionInput = null;
-        // BaseError response = api.postAdminReturned(adminActionInput);
+        AdminActionInput body = null;
+        // BaseError response = api.postAdminReturned(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -298,11 +457,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminRevivePlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postAdminRevivePlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postAdminRevivePlan(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -310,11 +470,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminSubstituteTest() {
-        SubstituteBookData substituteBookData = null;
-        // BaseError response = api.postAdminSubstitute(substituteBookData);
+        SubstituteBookData body = null;
+        // BaseError response = api.postAdminSubstitute(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -322,11 +483,38 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminSuspendPlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postAdminSuspendPlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postAdminSuspendPlan(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Admin Transaction Report
+     */
+    @Test
+    public void postAdminTransactionReportTest() {
+        ReportInput body = null;
+        // TransactionReport response = api.postAdminTransactionReport(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Admin Update Password
+     */
+    @Test
+    public void postAdminUpdatePasswordTest() {
+        PasswordUpdateInput body = null;
+        // BaseError response = api.postAdminUpdatePassword(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -334,11 +522,25 @@ public class DefaultApiTest {
      */
     @Test
     public void postAdminVerifyKeyTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // BaseError response = api.postAdminVerifyKey(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // BaseError response = api.postAdminVerifyKey(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Browse Library
+     */
+    @Test
+    public void postBrowseLibraryTest() {
+        VerifyKeyBody body = null;
+        // CategoriesData response = api.postBrowseLibrary(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -346,11 +548,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postCancelReadyToReturnBookTest() {
-        MemberActionInput memberActionInput = null;
-        // MemberAction response = api.postCancelReadyToReturnBook(memberActionInput);
+        MemberActionInput body = null;
+        // MemberData response = api.postCancelReadyToReturnBook(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -358,11 +561,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postCancelReserveBookTest() {
-        MemberActionInput memberActionInput = null;
-        // MemberAction response = api.postCancelReserveBook(memberActionInput);
+        MemberActionInput body = null;
+        // MemberData response = api.postCancelReserveBook(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -370,11 +574,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postCreateMemberTest() {
-        CreateMemberInput createMemberInput = null;
-        // BaseError response = api.postCreateMember(createMemberInput);
+        MemberDetailsInput body = null;
+        // MemberData response = api.postCreateMember(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -382,11 +587,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postCreatePlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postCreatePlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postCreatePlan(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -394,11 +600,38 @@ public class DefaultApiTest {
      */
     @Test
     public void postDeletePlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postDeletePlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postDeletePlan(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Edit Member
+     */
+    @Test
+    public void postEditMemberTest() {
+        MemberDetailsInput body = null;
+        // MemberData response = api.postEditMember(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Get Delivery Cost
+     */
+    @Test
+    public void postGetDeliveryCostTest() {
+        AddressInput body = null;
+        // DeliveryCostData response = api.postGetDeliveryCost(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -406,11 +639,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postGetHotBooksTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // InlineResponse200 response = api.postGetHotBooks(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // InlineResponse200 response = api.postGetHotBooks(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -418,11 +652,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postGetMemberTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // User response = api.postGetMember(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // MemberData response = api.postGetMember(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -430,11 +665,25 @@ public class DefaultApiTest {
      */
     @Test
     public void postLoginTest() {
-        UserLoginBody userLoginBody = null;
-        // BaseError response = api.postLogin(userLoginBody);
+        UserLoginBody body = null;
+        // BaseError response = api.postLogin(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Logout
+     */
+    @Test
+    public void postLogoutTest() {
+        VerifyKeyBody body = null;
+        // BaseError response = api.postLogout(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -442,11 +691,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postModifyPlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postModifyPlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postModifyPlan(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -454,11 +704,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postReadyToReturnBookTest() {
-        MemberActionInput memberActionInput = null;
-        // MemberAction response = api.postReadyToReturnBook(memberActionInput);
+        MemberActionInput body = null;
+        // MemberData response = api.postReadyToReturnBook(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -466,11 +717,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postReserveBookTest() {
-        MemberActionInput memberActionInput = null;
-        // MemberAction response = api.postReserveBook(memberActionInput);
+        MemberActionInput body = null;
+        // MemberData response = api.postReserveBook(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -478,11 +730,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postRevivePlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postRevivePlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postRevivePlan(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -490,11 +743,12 @@ public class DefaultApiTest {
      */
     @Test
     public void postSearchTest() {
-        SearchBody searchBody = null;
-        // SearchData response = api.postSearch(searchBody);
+        SearchBody body = null;
+        // SearchData response = api.postSearch(body);
 
         // TODO: test validations
     }
+
     /**
      * 
      *
@@ -502,11 +756,25 @@ public class DefaultApiTest {
      */
     @Test
     public void postSuspendPlanTest() {
-        PlanActionInput planActionInput = null;
-        // BaseError response = api.postSuspendPlan(planActionInput);
+        PlanActionInput body = null;
+        // MemberData response = api.postSuspendPlan(body);
 
         // TODO: test validations
     }
+
+    /**
+     * 
+     *
+     * Update Password
+     */
+    @Test
+    public void postUpdatePasswordTest() {
+        PasswordUpdateInput body = null;
+        // BaseError response = api.postUpdatePassword(body);
+
+        // TODO: test validations
+    }
+
     /**
      * 
      *
@@ -514,8 +782,8 @@ public class DefaultApiTest {
      */
     @Test
     public void postVerifyKeyTest() {
-        VerifyKeyBody verifyKeyBody = null;
-        // BaseError response = api.postVerifyKey(verifyKeyBody);
+        VerifyKeyBody body = null;
+        // BaseError response = api.postVerifyKey(body);
 
         // TODO: test validations
     }

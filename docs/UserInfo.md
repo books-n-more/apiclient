@@ -1,23 +1,17 @@
-
-
 # UserInfo
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userType** | **BigDecimal** |  | 
-**numDeliveries** | **BigDecimal** |  | 
+**userType** | [**BigDecimal**](BigDecimal.md) |  | 
+**numDeliveries** | [**BigDecimal**](BigDecimal.md) |  | 
 **name** | **String** |  | 
-**sex** | **String** |  | 
+**sex** | **String** |  |  [optional]
 **phone** | **String** |  | 
-**address** | [**UserInfoAddress**](UserInfoAddress.md) |  | 
+**email** | **String** |  | 
+**address** | [**Address**](Address.md) |  | 
 **borrowStatus** | **String** |  |  [optional]
-
-
-## Implemented Interfaces
-
-* Parcelable
-
-
+**id** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**balanceDue** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**deposit** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**numBooks** | **String** |  |  [optional]
