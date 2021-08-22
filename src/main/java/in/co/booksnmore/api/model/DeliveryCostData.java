@@ -30,7 +30,7 @@ import android.os.Parcel;
  * DeliveryCostData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-18T07:16:47.677Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
 public class DeliveryCostData implements Parcelable {
   @SerializedName("cost")
   private List<List<BigDecimal>> cost = new ArrayList<List<BigDecimal>>();

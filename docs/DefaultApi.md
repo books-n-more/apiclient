@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**postAdminBookById**](DefaultApi.md#postAdminBookById) | **POST** admin/bookById | 
 [**postAdminBorrow**](DefaultApi.md#postAdminBorrow) | **POST** admin/borrow | 
 [**postAdminCash**](DefaultApi.md#postAdminCash) | **POST** admin/cash | 
+[**postAdminCreateBook**](DefaultApi.md#postAdminCreateBook) | **POST** admin/createBook | 
 [**postAdminCreateMember**](DefaultApi.md#postAdminCreateMember) | **POST** admin/createMember | 
 [**postAdminCreatePlan**](DefaultApi.md#postAdminCreatePlan) | **POST** admin/createPlan | 
 [**postAdminDeletePlan**](DefaultApi.md#postAdminDeletePlan) | **POST** admin/deletePlan | 
@@ -539,6 +540,96 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postAdminCreateBook"></a>
+# **postAdminCreateBook**
+> AdminBookByIdData postAdminCreateBook(body)
+
+
+
+Create Book
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+AdminEditBookByIdBody body = new AdminEditBookByIdBody(); // AdminEditBookByIdBody | 
+try {
+    AdminBookByIdData result = apiInstance.postAdminCreateBook(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminCreateBook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AdminEditBookByIdBody**](AdminEditBookByIdBody.md)|  | [optional]
+
+### Return type
+
+[**AdminBookByIdData**](AdminBookByIdData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json
+
+<a name="postAdminCreateBook"></a>
+# **postAdminCreateBook**
+> AdminBookByIdData postAdminCreateBook(body)
+
+
+
+Create Book
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+AdminEditBookByIdBody body = new AdminEditBookByIdBody(); // AdminEditBookByIdBody | 
+try {
+    AdminBookByIdData result = apiInstance.postAdminCreateBook(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminCreateBook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AdminEditBookByIdBody**](AdminEditBookByIdBody.md)|  | [optional]
+
+### Return type
+
+[**AdminBookByIdData**](AdminBookByIdData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json
+
 <a name="postAdminCreateMember"></a>
 # **postAdminCreateMember**
 > MemberData postAdminCreateMember(body)
@@ -811,7 +902,7 @@ No authorization required
 
 <a name="postAdminEditBookById"></a>
 # **postAdminEditBookById**
-> BaseError postAdminEditBookById(body)
+> AdminBookByIdData postAdminEditBookById(body)
 
 
 
@@ -827,7 +918,7 @@ edit a book
 DefaultApi apiInstance = new DefaultApi();
 AdminEditBookByIdBody body = new AdminEditBookByIdBody(); // AdminEditBookByIdBody | 
 try {
-    BaseError result = apiInstance.postAdminEditBookById(body);
+    AdminBookByIdData result = apiInstance.postAdminEditBookById(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#postAdminEditBookById");
@@ -843,7 +934,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseError**](BaseError.md)
+[**AdminBookByIdData**](AdminBookByIdData.md)
 
 ### Authorization
 

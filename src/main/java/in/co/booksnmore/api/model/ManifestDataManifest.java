@@ -31,7 +31,7 @@ import android.os.Parcel;
  * ManifestDataManifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-18T07:16:47.677Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
 public class ManifestDataManifest implements Parcelable {
   @SerializedName("address1")
   private String address1 = null;

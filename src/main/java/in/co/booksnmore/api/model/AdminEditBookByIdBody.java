@@ -19,127 +19,25 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import in.co.booksnmore.api.model.BookData;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * AdminEditBookByIdBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-18T07:16:47.677Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
 public class AdminEditBookByIdBody implements Parcelable {
-  @SerializedName("ISBN")
-  private String ISBN = null;
-
-  @SerializedName("author")
-  private String author = null;
-
-  @SerializedName("bookId")
-  private BigDecimal bookId = null;
-
-  @SerializedName("shelfCode")
-  private String shelfCode = null;
-
-  @SerializedName("title")
-  private String title = null;
-
   @SerializedName("authKey")
   private String authKey = null;
 
+  @SerializedName("book")
+  private BookData book = null;
+
   public AdminEditBookByIdBody() {
   }
-  public AdminEditBookByIdBody ISBN(String ISBN) {
-    this.ISBN = ISBN;
-    return this;
-  }
-
-   /**
-   * Get ISBN
-   * @return ISBN
-  **/
-  @Schema(required = true, description = "")
-  public String getISBN() {
-    return ISBN;
-  }
-
-  public void setISBN(String ISBN) {
-    this.ISBN = ISBN;
-  }
-
-  public AdminEditBookByIdBody author(String author) {
-    this.author = author;
-    return this;
-  }
-
-   /**
-   * Get author
-   * @return author
-  **/
-  @Schema(required = true, description = "")
-  public String getAuthor() {
-    return author;
-  }
-
-  public void setAuthor(String author) {
-    this.author = author;
-  }
-
-  public AdminEditBookByIdBody bookId(BigDecimal bookId) {
-    this.bookId = bookId;
-    return this;
-  }
-
-   /**
-   * Get bookId
-   * @return bookId
-  **/
-  @Schema(required = true, description = "")
-  public BigDecimal getBookId() {
-    return bookId;
-  }
-
-  public void setBookId(BigDecimal bookId) {
-    this.bookId = bookId;
-  }
-
-  public AdminEditBookByIdBody shelfCode(String shelfCode) {
-    this.shelfCode = shelfCode;
-    return this;
-  }
-
-   /**
-   * Get shelfCode
-   * @return shelfCode
-  **/
-  @Schema(required = true, description = "")
-  public String getShelfCode() {
-    return shelfCode;
-  }
-
-  public void setShelfCode(String shelfCode) {
-    this.shelfCode = shelfCode;
-  }
-
-  public AdminEditBookByIdBody title(String title) {
-    this.title = title;
-    return this;
-  }
-
-   /**
-   * Get title
-   * @return title
-  **/
-  @Schema(required = true, description = "")
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
   public AdminEditBookByIdBody authKey(String authKey) {
     this.authKey = authKey;
     return this;
@@ -149,13 +47,31 @@ public class AdminEditBookByIdBody implements Parcelable {
    * Get authKey
    * @return authKey
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public String getAuthKey() {
     return authKey;
   }
 
   public void setAuthKey(String authKey) {
     this.authKey = authKey;
+  }
+
+  public AdminEditBookByIdBody book(BookData book) {
+    this.book = book;
+    return this;
+  }
+
+   /**
+   * Get book
+   * @return book
+  **/
+  @Schema(description = "")
+  public BookData getBook() {
+    return book;
+  }
+
+  public void setBook(BookData book) {
+    this.book = book;
   }
 
 
@@ -168,17 +84,13 @@ public class AdminEditBookByIdBody implements Parcelable {
       return false;
     }
     AdminEditBookByIdBody adminEditBookByIdBody = (AdminEditBookByIdBody) o;
-    return Objects.equals(this.ISBN, adminEditBookByIdBody.ISBN) &&
-        Objects.equals(this.author, adminEditBookByIdBody.author) &&
-        Objects.equals(this.bookId, adminEditBookByIdBody.bookId) &&
-        Objects.equals(this.shelfCode, adminEditBookByIdBody.shelfCode) &&
-        Objects.equals(this.title, adminEditBookByIdBody.title) &&
-        Objects.equals(this.authKey, adminEditBookByIdBody.authKey);
+    return Objects.equals(this.authKey, adminEditBookByIdBody.authKey) &&
+        Objects.equals(this.book, adminEditBookByIdBody.book);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ISBN, author, bookId, shelfCode, title, authKey);
+    return Objects.hash(authKey, book);
   }
 
 
@@ -187,12 +99,8 @@ public class AdminEditBookByIdBody implements Parcelable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AdminEditBookByIdBody {\n");
     
-    sb.append("    ISBN: ").append(toIndentedString(ISBN)).append("\n");
-    sb.append("    author: ").append(toIndentedString(author)).append("\n");
-    sb.append("    bookId: ").append(toIndentedString(bookId)).append("\n");
-    sb.append("    shelfCode: ").append(toIndentedString(shelfCode)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
+    sb.append("    book: ").append(toIndentedString(book)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,21 +118,13 @@ public class AdminEditBookByIdBody implements Parcelable {
 
 
   public void writeToParcel(Parcel out, int flags) {
-    out.writeValue(ISBN);
-    out.writeValue(author);
-    out.writeValue(bookId);
-    out.writeValue(shelfCode);
-    out.writeValue(title);
     out.writeValue(authKey);
+    out.writeValue(book);
   }
 
   AdminEditBookByIdBody(Parcel in) {
-    ISBN = (String)in.readValue(null);
-    author = (String)in.readValue(null);
-    bookId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    shelfCode = (String)in.readValue(null);
-    title = (String)in.readValue(null);
     authKey = (String)in.readValue(null);
+    book = (BookData)in.readValue(BookData.class.getClassLoader());
   }
 
   public int describeContents() {

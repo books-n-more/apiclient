@@ -27,7 +27,7 @@ import android.os.Parcel;
  * Address
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-18T07:16:47.677Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
 public class Address implements Parcelable {
   @SerializedName("l1")
   private String l1 = null;

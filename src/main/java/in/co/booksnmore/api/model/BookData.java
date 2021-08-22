@@ -28,7 +28,7 @@ import android.os.Parcel;
  * BookData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-18T07:16:47.677Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
 public class BookData implements Parcelable {
   @SerializedName("id")
   private BigDecimal id = null;
@@ -52,7 +52,16 @@ public class BookData implements Parcelable {
   private BigDecimal borrowerId = null;
 
   @SerializedName("status")
-  private BigDecimal status = null;
+  private String status = null;
+
+  @SerializedName("isAvailable")
+  private Boolean isAvailable = null;
+
+  @SerializedName("ISBN")
+  private String ISBN = null;
+
+  @SerializedName("image")
+  private String image = null;
 
   public BookData() {
   }
@@ -182,7 +191,7 @@ public class BookData implements Parcelable {
     this.borrowerId = borrowerId;
   }
 
-  public BookData status(BigDecimal status) {
+  public BookData status(String status) {
     this.status = status;
     return this;
   }
@@ -192,12 +201,66 @@ public class BookData implements Parcelable {
    * @return status
   **/
   @Schema(description = "")
-  public BigDecimal getStatus() {
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(BigDecimal status) {
+  public void setStatus(String status) {
     this.status = status;
+  }
+
+  public BookData isAvailable(Boolean isAvailable) {
+    this.isAvailable = isAvailable;
+    return this;
+  }
+
+   /**
+   * Get isAvailable
+   * @return isAvailable
+  **/
+  @Schema(description = "")
+  public Boolean isIsAvailable() {
+    return isAvailable;
+  }
+
+  public void setIsAvailable(Boolean isAvailable) {
+    this.isAvailable = isAvailable;
+  }
+
+  public BookData ISBN(String ISBN) {
+    this.ISBN = ISBN;
+    return this;
+  }
+
+   /**
+   * Get ISBN
+   * @return ISBN
+  **/
+  @Schema(description = "")
+  public String getISBN() {
+    return ISBN;
+  }
+
+  public void setISBN(String ISBN) {
+    this.ISBN = ISBN;
+  }
+
+  public BookData image(String image) {
+    this.image = image;
+    return this;
+  }
+
+   /**
+   * Get image
+   * @return image
+  **/
+  @Schema(description = "")
+  public String getImage() {
+    return image;
+  }
+
+  public void setImage(String image) {
+    this.image = image;
   }
 
 
@@ -217,12 +280,15 @@ public class BookData implements Parcelable {
         Objects.equals(this.canCancel, bookData.canCancel) &&
         Objects.equals(this.shelfCode, bookData.shelfCode) &&
         Objects.equals(this.borrowerId, bookData.borrowerId) &&
-        Objects.equals(this.status, bookData.status);
+        Objects.equals(this.status, bookData.status) &&
+        Objects.equals(this.isAvailable, bookData.isAvailable) &&
+        Objects.equals(this.ISBN, bookData.ISBN) &&
+        Objects.equals(this.image, bookData.image);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, author, borrowedOn, canCancel, shelfCode, borrowerId, status);
+    return Objects.hash(id, title, author, borrowedOn, canCancel, shelfCode, borrowerId, status, isAvailable, ISBN, image);
   }
 
 
@@ -239,6 +305,9 @@ public class BookData implements Parcelable {
     sb.append("    shelfCode: ").append(toIndentedString(shelfCode)).append("\n");
     sb.append("    borrowerId: ").append(toIndentedString(borrowerId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    isAvailable: ").append(toIndentedString(isAvailable)).append("\n");
+    sb.append("    ISBN: ").append(toIndentedString(ISBN)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -264,6 +333,9 @@ public class BookData implements Parcelable {
     out.writeValue(shelfCode);
     out.writeValue(borrowerId);
     out.writeValue(status);
+    out.writeValue(isAvailable);
+    out.writeValue(ISBN);
+    out.writeValue(image);
   }
 
   BookData(Parcel in) {
@@ -274,7 +346,10 @@ public class BookData implements Parcelable {
     canCancel = (Boolean)in.readValue(null);
     shelfCode = (String)in.readValue(null);
     borrowerId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    status = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    status = (String)in.readValue(null);
+    isAvailable = (Boolean)in.readValue(null);
+    ISBN = (String)in.readValue(null);
+    image = (String)in.readValue(null);
   }
 
   public int describeContents() {

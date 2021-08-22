@@ -8,3 +8,4 @@ Name | Type | Description | Notes
 **planId** | [**BigDecimal**](BigDecimal.md) |  | 
 **size** | **String** |  | 
 **status** | **String** |  | 
+**warnRenew** | **Boolean** |  |  [optional]

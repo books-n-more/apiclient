@@ -19,74 +19,26 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import in.co.booksnmore.api.model.BookData;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * AdminBookByIdData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-18T07:16:47.677Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
 public class AdminBookByIdData implements Parcelable {
-  @SerializedName("ISBN")
-  private String ISBN = null;
-
-  @SerializedName("author")
-  private String author = null;
-
   @SerializedName("errorCode")
-  private BigDecimal errorCode = null;
+  private Integer errorCode = null;
 
-  @SerializedName("id")
-  private BigDecimal id = null;
-
-  @SerializedName("shelfCode")
-  private String shelfCode = null;
-
-  @SerializedName("title")
-  private String title = null;
+  @SerializedName("book")
+  private BookData book = null;
 
   public AdminBookByIdData() {
   }
-  public AdminBookByIdData ISBN(String ISBN) {
-    this.ISBN = ISBN;
-    return this;
-  }
-
-   /**
-   * Get ISBN
-   * @return ISBN
-  **/
-  @Schema(description = "")
-  public String getISBN() {
-    return ISBN;
-  }
-
-  public void setISBN(String ISBN) {
-    this.ISBN = ISBN;
-  }
-
-  public AdminBookByIdData author(String author) {
-    this.author = author;
-    return this;
-  }
-
-   /**
-   * Get author
-   * @return author
-  **/
-  @Schema(description = "")
-  public String getAuthor() {
-    return author;
-  }
-
-  public void setAuthor(String author) {
-    this.author = author;
-  }
-
-  public AdminBookByIdData errorCode(BigDecimal errorCode) {
+  public AdminBookByIdData errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -96,66 +48,30 @@ public class AdminBookByIdData implements Parcelable {
    * @return errorCode
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(BigDecimal errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 
-  public AdminBookByIdData id(BigDecimal id) {
-    this.id = id;
+  public AdminBookByIdData book(BookData book) {
+    this.book = book;
     return this;
   }
 
    /**
-   * Get id
-   * @return id
+   * Get book
+   * @return book
   **/
   @Schema(description = "")
-  public BigDecimal getId() {
-    return id;
+  public BookData getBook() {
+    return book;
   }
 
-  public void setId(BigDecimal id) {
-    this.id = id;
-  }
-
-  public AdminBookByIdData shelfCode(String shelfCode) {
-    this.shelfCode = shelfCode;
-    return this;
-  }
-
-   /**
-   * Get shelfCode
-   * @return shelfCode
-  **/
-  @Schema(description = "")
-  public String getShelfCode() {
-    return shelfCode;
-  }
-
-  public void setShelfCode(String shelfCode) {
-    this.shelfCode = shelfCode;
-  }
-
-  public AdminBookByIdData title(String title) {
-    this.title = title;
-    return this;
-  }
-
-   /**
-   * Get title
-   * @return title
-  **/
-  @Schema(description = "")
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
+  public void setBook(BookData book) {
+    this.book = book;
   }
 
 
@@ -168,17 +84,13 @@ public class AdminBookByIdData implements Parcelable {
       return false;
     }
     AdminBookByIdData adminBookByIdData = (AdminBookByIdData) o;
-    return Objects.equals(this.ISBN, adminBookByIdData.ISBN) &&
-        Objects.equals(this.author, adminBookByIdData.author) &&
-        Objects.equals(this.errorCode, adminBookByIdData.errorCode) &&
-        Objects.equals(this.id, adminBookByIdData.id) &&
-        Objects.equals(this.shelfCode, adminBookByIdData.shelfCode) &&
-        Objects.equals(this.title, adminBookByIdData.title);
+    return Objects.equals(this.errorCode, adminBookByIdData.errorCode) &&
+        Objects.equals(this.book, adminBookByIdData.book);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ISBN, author, errorCode, id, shelfCode, title);
+    return Objects.hash(errorCode, book);
   }
 
 
@@ -187,12 +99,8 @@ public class AdminBookByIdData implements Parcelable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AdminBookByIdData {\n");
     
-    sb.append("    ISBN: ").append(toIndentedString(ISBN)).append("\n");
-    sb.append("    author: ").append(toIndentedString(author)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    shelfCode: ").append(toIndentedString(shelfCode)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    book: ").append(toIndentedString(book)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,21 +118,13 @@ public class AdminBookByIdData implements Parcelable {
 
 
   public void writeToParcel(Parcel out, int flags) {
-    out.writeValue(ISBN);
-    out.writeValue(author);
     out.writeValue(errorCode);
-    out.writeValue(id);
-    out.writeValue(shelfCode);
-    out.writeValue(title);
+    out.writeValue(book);
   }
 
   AdminBookByIdData(Parcel in) {
-    ISBN = (String)in.readValue(null);
-    author = (String)in.readValue(null);
-    errorCode = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    id = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    shelfCode = (String)in.readValue(null);
-    title = (String)in.readValue(null);
+    errorCode = (Integer)in.readValue(null);
+    book = (BookData)in.readValue(BookData.class.getClassLoader());
   }
 
   public int describeContents() {

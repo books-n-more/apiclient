@@ -180,6 +180,19 @@ public class DefaultApiTest {
     /**
      * 
      *
+     * Create Book
+     */
+    @Test
+    public void postAdminCreateBookTest() {
+        AdminEditBookByIdBody body = null;
+        // AdminBookByIdData response = api.postAdminCreateBook(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
      * Admin Create Member
      */
     @Test
@@ -250,7 +263,7 @@ public class DefaultApiTest {
     @Test
     public void postAdminEditBookByIdTest() {
         AdminEditBookByIdBody body = null;
-        // BaseError response = api.postAdminEditBookById(body);
+        // AdminBookByIdData response = api.postAdminEditBookById(body);
 
         // TODO: test validations
     }

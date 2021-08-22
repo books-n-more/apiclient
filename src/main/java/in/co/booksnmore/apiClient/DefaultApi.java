@@ -180,6 +180,34 @@ public interface DefaultApi {
 
   /**
    * 
+   * Create Book
+   * @param body  (optional)
+   * @return Call&lt;AdminBookByIdData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/createBook")
+  Call<AdminBookByIdData> postAdminCreateBook(
+                    @retrofit2.http.Body AdminEditBookByIdBody body    
+  );
+
+  /**
+   * 
+   * Create Book
+   * @param body  (optional)
+   * @return Call&lt;AdminBookByIdData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/createBook")
+  Call<AdminBookByIdData> postAdminCreateBook(
+                    @retrofit2.http.Body AdminEditBookByIdBody body    
+  );
+
+  /**
+   * 
    * Admin Create Member
    * @param body  (optional)
    * @return Call&lt;MemberData&gt;
@@ -266,13 +294,13 @@ public interface DefaultApi {
    * 
    * edit a book
    * @param body  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @return Call&lt;AdminBookByIdData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("admin/editBookById")
-  Call<BaseError> postAdminEditBookById(
+  Call<AdminBookByIdData> postAdminEditBookById(
                     @retrofit2.http.Body AdminEditBookByIdBody body    
   );
 

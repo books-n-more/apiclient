@@ -28,7 +28,7 @@ import android.os.Parcel;
  * PlanData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-18T07:16:47.677Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
 public class PlanData implements Parcelable {
   @SerializedName("duration")
   private String duration = null;
@@ -44,6 +44,9 @@ public class PlanData implements Parcelable {
 
   @SerializedName("status")
   private String status = null;
+
+  @SerializedName("warnRenew")
+  private Boolean warnRenew = null;
 
   public PlanData() {
   }
@@ -137,6 +140,24 @@ public class PlanData implements Parcelable {
     this.status = status;
   }
 
+  public PlanData warnRenew(Boolean warnRenew) {
+    this.warnRenew = warnRenew;
+    return this;
+  }
+
+   /**
+   * Get warnRenew
+   * @return warnRenew
+  **/
+  @Schema(description = "")
+  public Boolean isWarnRenew() {
+    return warnRenew;
+  }
+
+  public void setWarnRenew(Boolean warnRenew) {
+    this.warnRenew = warnRenew;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,12 +172,13 @@ public class PlanData implements Parcelable {
         Objects.equals(this.nextRenewal, planData.nextRenewal) &&
         Objects.equals(this.planId, planData.planId) &&
         Objects.equals(this.size, planData.size) &&
-        Objects.equals(this.status, planData.status);
+        Objects.equals(this.status, planData.status) &&
+        Objects.equals(this.warnRenew, planData.warnRenew);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(duration, nextRenewal, planId, size, status);
+    return Objects.hash(duration, nextRenewal, planId, size, status, warnRenew);
   }
 
 
@@ -170,6 +192,7 @@ public class PlanData implements Parcelable {
     sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    warnRenew: ").append(toIndentedString(warnRenew)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -192,6 +215,7 @@ public class PlanData implements Parcelable {
     out.writeValue(planId);
     out.writeValue(size);
     out.writeValue(status);
+    out.writeValue(warnRenew);
   }
 
   PlanData(Parcel in) {
@@ -200,6 +224,7 @@ public class PlanData implements Parcelable {
     planId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
     size = (String)in.readValue(null);
     status = (String)in.readValue(null);
+    warnRenew = (Boolean)in.readValue(null);
   }
 
   public int describeContents() {
