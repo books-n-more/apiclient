@@ -29,7 +29,7 @@ import android.os.Parcel;
  * MemberData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-25T01:46:21.882Z[GMT]")
 public class MemberData implements Parcelable {
   @SerializedName("errorCode")
   private BigDecimal errorCode = null;

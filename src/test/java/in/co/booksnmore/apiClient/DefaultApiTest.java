@@ -8,6 +8,7 @@ import in.co.booksnmore.api.model.AdminBookListData;
 import in.co.booksnmore.api.model.AdminEditBookByIdBody;
 import in.co.booksnmore.api.model.AdminLoginBody;
 import in.co.booksnmore.api.model.AdminMemberInput;
+import in.co.booksnmore.api.model.BalanceDueData;
 import in.co.booksnmore.api.model.BaseError;
 import in.co.booksnmore.api.model.BookListBody;
 import in.co.booksnmore.api.model.CashInput;
@@ -329,6 +330,19 @@ public class DefaultApiTest {
     public void postAdminGetMemberTest() {
         AdminMemberInput body = null;
         // MemberData response = api.postAdminGetMember(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Admin Get Member Dues
+     */
+    @Test
+    public void postAdminGetMemberDuesTest() {
+        AdminMemberInput body = null;
+        // BalanceDueData response = api.postAdminGetMemberDues(body);
 
         // TODO: test validations
     }
@@ -667,6 +681,19 @@ public class DefaultApiTest {
     public void postGetMemberTest() {
         VerifyKeyBody body = null;
         // MemberData response = api.postGetMember(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Get Member Dues
+     */
+    @Test
+    public void postGetMemberDuesTest() {
+        VerifyKeyBody body = null;
+        // BalanceDueData response = api.postGetMemberDues(body);
 
         // TODO: test validations
     }

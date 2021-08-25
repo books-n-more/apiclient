@@ -21,20 +21,27 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
- * BaseError
+ * BalanceDueData
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-25T01:46:21.882Z[GMT]")
-public class BaseError implements Parcelable {
+public class BalanceDueData implements Parcelable {
   @SerializedName("errorCode")
   private Integer errorCode = null;
 
-  public BaseError() {
+  @SerializedName("balanceDue")
+  private BigDecimal balanceDue = null;
+
+  @SerializedName("futureDue")
+  private BigDecimal futureDue = null;
+
+  public BalanceDueData() {
   }
-  public BaseError errorCode(Integer errorCode) {
+  public BalanceDueData errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -52,6 +59,42 @@ public class BaseError implements Parcelable {
     this.errorCode = errorCode;
   }
 
+  public BalanceDueData balanceDue(BigDecimal balanceDue) {
+    this.balanceDue = balanceDue;
+    return this;
+  }
+
+   /**
+   * Get balanceDue
+   * @return balanceDue
+  **/
+  @Schema(required = true, description = "")
+  public BigDecimal getBalanceDue() {
+    return balanceDue;
+  }
+
+  public void setBalanceDue(BigDecimal balanceDue) {
+    this.balanceDue = balanceDue;
+  }
+
+  public BalanceDueData futureDue(BigDecimal futureDue) {
+    this.futureDue = futureDue;
+    return this;
+  }
+
+   /**
+   * Get futureDue
+   * @return futureDue
+  **/
+  @Schema(required = true, description = "")
+  public BigDecimal getFutureDue() {
+    return futureDue;
+  }
+
+  public void setFutureDue(BigDecimal futureDue) {
+    this.futureDue = futureDue;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,22 +104,26 @@ public class BaseError implements Parcelable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BaseError baseError = (BaseError) o;
-    return Objects.equals(this.errorCode, baseError.errorCode);
+    BalanceDueData balanceDueData = (BalanceDueData) o;
+    return Objects.equals(this.errorCode, balanceDueData.errorCode) &&
+        Objects.equals(this.balanceDue, balanceDueData.balanceDue) &&
+        Objects.equals(this.futureDue, balanceDueData.futureDue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errorCode);
+    return Objects.hash(errorCode, balanceDue, futureDue);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BaseError {\n");
+    sb.append("class BalanceDueData {\n");
     
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    balanceDue: ").append(toIndentedString(balanceDue)).append("\n");
+    sb.append("    futureDue: ").append(toIndentedString(futureDue)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -95,22 +142,26 @@ public class BaseError implements Parcelable {
 
   public void writeToParcel(Parcel out, int flags) {
     out.writeValue(errorCode);
+    out.writeValue(balanceDue);
+    out.writeValue(futureDue);
   }
 
-  BaseError(Parcel in) {
+  BalanceDueData(Parcel in) {
     errorCode = (Integer)in.readValue(null);
+    balanceDue = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    futureDue = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
   }
 
   public int describeContents() {
     return 0;
   }
 
-  public static final Parcelable.Creator<BaseError> CREATOR = new Parcelable.Creator<BaseError>() {
-    public BaseError createFromParcel(Parcel in) {
-      return new BaseError(in);
+  public static final Parcelable.Creator<BalanceDueData> CREATOR = new Parcelable.Creator<BalanceDueData>() {
+    public BalanceDueData createFromParcel(Parcel in) {
+      return new BalanceDueData(in);
     }
-    public BaseError[] newArray(int size) {
-      return new BaseError[size];
+    public BalanceDueData[] newArray(int size) {
+      return new BalanceDueData[size];
     }
   };
 }

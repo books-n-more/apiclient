@@ -29,7 +29,7 @@ import android.os.Parcel;
  * UserInfo
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-22T12:51:29.524Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-25T01:46:21.882Z[GMT]")
 public class UserInfo implements Parcelable {
   @SerializedName("userType")
   private BigDecimal userType = null;

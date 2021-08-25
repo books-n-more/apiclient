@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *http://{host}:8080*
+All URIs are relative to *https://{host}*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**postAdminGetBooks**](DefaultApi.md#postAdminGetBooks) | **POST** admin/getBooks | 
 [**postAdminGetDeliveryCost**](DefaultApi.md#postAdminGetDeliveryCost) | **POST** admin/getDeliveryCost | 
 [**postAdminGetMember**](DefaultApi.md#postAdminGetMember) | **POST** admin/getMember | 
+[**postAdminGetMemberDues**](DefaultApi.md#postAdminGetMemberDues) | **POST** admin/getMemberDues | 
 [**postAdminLogin**](DefaultApi.md#postAdminLogin) | **POST** admin/login | 
 [**postAdminLogout**](DefaultApi.md#postAdminLogout) | **POST** admin/logout | 
 [**postAdminManifest**](DefaultApi.md#postAdminManifest) | **POST** admin/manifest | 
@@ -52,6 +53,7 @@ Method | HTTP request | Description
 [**postGetDeliveryCost**](DefaultApi.md#postGetDeliveryCost) | **POST** getDeliveryCost | 
 [**postGetHotBooks**](DefaultApi.md#postGetHotBooks) | **POST** getHotBooks | 
 [**postGetMember**](DefaultApi.md#postGetMember) | **POST** getMember | 
+[**postGetMemberDues**](DefaultApi.md#postGetMemberDues) | **POST** getMemberDues | 
 [**postLogin**](DefaultApi.md#postLogin) | **POST** login | 
 [**postLogout**](DefaultApi.md#postLogout) | **POST** logout | 
 [**postModifyPlan**](DefaultApi.md#postModifyPlan) | **POST** modifyPlan | 
@@ -1160,6 +1162,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MemberData**](MemberData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postAdminGetMemberDues"></a>
+# **postAdminGetMemberDues**
+> BalanceDueData postAdminGetMemberDues(body)
+
+
+
+Admin Get Member Dues
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+AdminMemberInput body = new AdminMemberInput(); // AdminMemberInput | 
+try {
+    BalanceDueData result = apiInstance.postAdminGetMemberDues(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminGetMemberDues");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AdminMemberInput**](AdminMemberInput.md)|  | [optional]
+
+### Return type
+
+[**BalanceDueData**](BalanceDueData.md)
 
 ### Authorization
 
@@ -2330,6 +2377,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MemberData**](MemberData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postGetMemberDues"></a>
+# **postGetMemberDues**
+> BalanceDueData postGetMemberDues(body)
+
+
+
+Get Member Dues
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+VerifyKeyBody body = new VerifyKeyBody(); // VerifyKeyBody | 
+try {
+    BalanceDueData result = apiInstance.postGetMemberDues(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postGetMemberDues");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyKeyBody**](VerifyKeyBody.md)|  | [optional]
+
+### Return type
+
+[**BalanceDueData**](BalanceDueData.md)
 
 ### Authorization
 

@@ -15,6 +15,7 @@ import in.co.booksnmore.api.model.AdminBookListData;
 import in.co.booksnmore.api.model.AdminEditBookByIdBody;
 import in.co.booksnmore.api.model.AdminLoginBody;
 import in.co.booksnmore.api.model.AdminMemberInput;
+import in.co.booksnmore.api.model.BalanceDueData;
 import in.co.booksnmore.api.model.BaseError;
 import in.co.booksnmore.api.model.BookListBody;
 import in.co.booksnmore.api.model.CashInput;
@@ -371,6 +372,20 @@ public interface DefaultApi {
   })
   @POST("admin/getMember")
   Call<MemberData> postAdminGetMember(
+                    @retrofit2.http.Body AdminMemberInput body    
+  );
+
+  /**
+   * 
+   * Admin Get Member Dues
+   * @param body  (optional)
+   * @return Call&lt;BalanceDueData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/getMemberDues")
+  Call<BalanceDueData> postAdminGetMemberDues(
                     @retrofit2.http.Body AdminMemberInput body    
   );
 
@@ -735,6 +750,20 @@ public interface DefaultApi {
   })
   @POST("getMember")
   Call<MemberData> postGetMember(
+                    @retrofit2.http.Body VerifyKeyBody body    
+  );
+
+  /**
+   * 
+   * Get Member Dues
+   * @param body  (optional)
+   * @return Call&lt;BalanceDueData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("getMemberDues")
+  Call<BalanceDueData> postGetMemberDues(
                     @retrofit2.http.Body VerifyKeyBody body    
   );
 
