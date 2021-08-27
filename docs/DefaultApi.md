@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *https://{host}*
+All URIs are relative to *http://{host}*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
