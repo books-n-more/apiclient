@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import in.co.booksnmore.api.model.ManifestDataDispatch;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.Parcelable;
@@ -31,7 +30,7 @@ import android.os.Parcel;
  * ManifestDataManifest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class ManifestDataManifest implements Parcelable {
   @SerializedName("address1")
   private String address1 = null;
@@ -43,7 +42,7 @@ public class ManifestDataManifest implements Parcelable {
   private List<ManifestDataDispatch> dispatch = null;
 
   @SerializedName("memberId")
-  private BigDecimal memberId = null;
+  private Integer memberId = null;
 
   @SerializedName("name")
   private String name = null;
@@ -118,7 +117,7 @@ public class ManifestDataManifest implements Parcelable {
     this.dispatch = dispatch;
   }
 
-  public ManifestDataManifest memberId(BigDecimal memberId) {
+  public ManifestDataManifest memberId(Integer memberId) {
     this.memberId = memberId;
     return this;
   }
@@ -128,11 +127,11 @@ public class ManifestDataManifest implements Parcelable {
    * @return memberId
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getMemberId() {
+  public Integer getMemberId() {
     return memberId;
   }
 
-  public void setMemberId(BigDecimal memberId) {
+  public void setMemberId(Integer memberId) {
     this.memberId = memberId;
   }
 
@@ -265,7 +264,7 @@ public class ManifestDataManifest implements Parcelable {
     address1 = (String)in.readValue(null);
     address2 = (String)in.readValue(null);
     dispatch = (List<ManifestDataDispatch>)in.readValue(ManifestDataDispatch.class.getClassLoader());
-    memberId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    memberId = (Integer)in.readValue(null);
     name = (String)in.readValue(null);
     phone = (String)in.readValue(null);
     pickup = (List<ManifestDataDispatch>)in.readValue(ManifestDataDispatch.class.getClassLoader());

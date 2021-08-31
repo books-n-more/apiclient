@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import in.co.booksnmore.api.model.ManifestDataManifest;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.Parcelable;
@@ -31,17 +30,17 @@ import android.os.Parcel;
  * ManifestData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class ManifestData implements Parcelable {
   @SerializedName("errorCode")
-  private BigDecimal errorCode = null;
+  private Integer errorCode = null;
 
   @SerializedName("manifest")
   private List<ManifestDataManifest> manifest = new ArrayList<ManifestDataManifest>();
 
   public ManifestData() {
   }
-  public ManifestData errorCode(BigDecimal errorCode) {
+  public ManifestData errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -51,11 +50,11 @@ public class ManifestData implements Parcelable {
    * @return errorCode
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(BigDecimal errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 
@@ -131,7 +130,7 @@ public class ManifestData implements Parcelable {
   }
 
   ManifestData(Parcel in) {
-    errorCode = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    errorCode = (Integer)in.readValue(null);
     manifest = (List<ManifestDataManifest>)in.readValue(ManifestDataManifest.class.getClassLoader());
   }
 

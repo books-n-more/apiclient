@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **duration** | **String** |  | 
 **nextRenewal** | **String** |  | 
-**planId** | [**BigDecimal**](BigDecimal.md) |  | 
+**planId** | **Integer** |  | 
 **size** | **String** |  | 
 **status** | **String** |  | 
 **warnRenew** | **Boolean** |  |  [optional]

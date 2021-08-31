@@ -21,23 +21,22 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * CashInput
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class CashInput implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;
 
   @SerializedName("memberId")
-  private BigDecimal memberId = null;
+  private Integer memberId = null;
 
   @SerializedName("cashIn")
-  private BigDecimal cashIn = null;
+  private Integer cashIn = null;
 
   public CashInput() {
   }
@@ -59,7 +58,7 @@ public class CashInput implements Parcelable {
     this.authKey = authKey;
   }
 
-  public CashInput memberId(BigDecimal memberId) {
+  public CashInput memberId(Integer memberId) {
     this.memberId = memberId;
     return this;
   }
@@ -69,15 +68,15 @@ public class CashInput implements Parcelable {
    * @return memberId
   **/
   @Schema(description = "")
-  public BigDecimal getMemberId() {
+  public Integer getMemberId() {
     return memberId;
   }
 
-  public void setMemberId(BigDecimal memberId) {
+  public void setMemberId(Integer memberId) {
     this.memberId = memberId;
   }
 
-  public CashInput cashIn(BigDecimal cashIn) {
+  public CashInput cashIn(Integer cashIn) {
     this.cashIn = cashIn;
     return this;
   }
@@ -87,11 +86,11 @@ public class CashInput implements Parcelable {
    * @return cashIn
   **/
   @Schema(description = "")
-  public BigDecimal getCashIn() {
+  public Integer getCashIn() {
     return cashIn;
   }
 
-  public void setCashIn(BigDecimal cashIn) {
+  public void setCashIn(Integer cashIn) {
     this.cashIn = cashIn;
   }
 
@@ -148,8 +147,8 @@ public class CashInput implements Parcelable {
 
   CashInput(Parcel in) {
     authKey = (String)in.readValue(null);
-    memberId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    cashIn = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    memberId = (Integer)in.readValue(null);
+    cashIn = (Integer)in.readValue(null);
   }
 
   public int describeContents() {

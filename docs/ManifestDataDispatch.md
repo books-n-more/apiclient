@@ -4,5 +4,5 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **author** | **String** |  | 
-**bookId** | [**BigDecimal**](BigDecimal.md) |  | 
+**bookId** | **Integer** |  | 
 **title** | **String** |  | 

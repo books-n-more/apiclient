@@ -21,17 +21,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * BookData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class BookData implements Parcelable {
   @SerializedName("id")
-  private BigDecimal id = null;
+  private Integer id = null;
 
   @SerializedName("title")
   private String title = null;
@@ -49,7 +48,7 @@ public class BookData implements Parcelable {
   private String shelfCode = null;
 
   @SerializedName("borrowerId")
-  private BigDecimal borrowerId = null;
+  private Integer borrowerId = null;
 
   @SerializedName("status")
   private String status = null;
@@ -65,7 +64,7 @@ public class BookData implements Parcelable {
 
   public BookData() {
   }
-  public BookData id(BigDecimal id) {
+  public BookData id(Integer id) {
     this.id = id;
     return this;
   }
@@ -75,11 +74,11 @@ public class BookData implements Parcelable {
    * @return id
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(BigDecimal id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -173,7 +172,7 @@ public class BookData implements Parcelable {
     this.shelfCode = shelfCode;
   }
 
-  public BookData borrowerId(BigDecimal borrowerId) {
+  public BookData borrowerId(Integer borrowerId) {
     this.borrowerId = borrowerId;
     return this;
   }
@@ -183,11 +182,11 @@ public class BookData implements Parcelable {
    * @return borrowerId
   **/
   @Schema(description = "")
-  public BigDecimal getBorrowerId() {
+  public Integer getBorrowerId() {
     return borrowerId;
   }
 
-  public void setBorrowerId(BigDecimal borrowerId) {
+  public void setBorrowerId(Integer borrowerId) {
     this.borrowerId = borrowerId;
   }
 
@@ -339,13 +338,13 @@ public class BookData implements Parcelable {
   }
 
   BookData(Parcel in) {
-    id = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    id = (Integer)in.readValue(null);
     title = (String)in.readValue(null);
     author = (String)in.readValue(null);
     borrowedOn = (String)in.readValue(null);
     canCancel = (Boolean)in.readValue(null);
     shelfCode = (String)in.readValue(null);
-    borrowerId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    borrowerId = (Integer)in.readValue(null);
     status = (String)in.readValue(null);
     isAvailable = (Boolean)in.readValue(null);
     ISBN = (String)in.readValue(null);

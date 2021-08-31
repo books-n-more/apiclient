@@ -30,7 +30,7 @@ import android.os.Parcel;
  * CategoryItem
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class CategoryItem implements Parcelable {
   @SerializedName("category")
   private String category = null;

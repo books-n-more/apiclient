@@ -21,20 +21,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * ManifestDataDispatch
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class ManifestDataDispatch implements Parcelable {
   @SerializedName("author")
   private String author = null;
 
   @SerializedName("bookId")
-  private BigDecimal bookId = null;
+  private Integer bookId = null;
 
   @SerializedName("title")
   private String title = null;
@@ -59,7 +58,7 @@ public class ManifestDataDispatch implements Parcelable {
     this.author = author;
   }
 
-  public ManifestDataDispatch bookId(BigDecimal bookId) {
+  public ManifestDataDispatch bookId(Integer bookId) {
     this.bookId = bookId;
     return this;
   }
@@ -69,11 +68,11 @@ public class ManifestDataDispatch implements Parcelable {
    * @return bookId
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getBookId() {
+  public Integer getBookId() {
     return bookId;
   }
 
-  public void setBookId(BigDecimal bookId) {
+  public void setBookId(Integer bookId) {
     this.bookId = bookId;
   }
 
@@ -148,7 +147,7 @@ public class ManifestDataDispatch implements Parcelable {
 
   ManifestDataDispatch(Parcel in) {
     author = (String)in.readValue(null);
-    bookId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    bookId = (Integer)in.readValue(null);
     title = (String)in.readValue(null);
   }
 

@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userType** | [**BigDecimal**](BigDecimal.md) |  | 
-**numDeliveries** | [**BigDecimal**](BigDecimal.md) |  | 
+**userType** | **Integer** |  | 
+**numDeliveries** | **Integer** |  | 
 **name** | **String** |  | 
 **sex** | **String** |  |  [optional]
 **phone** | **String** |  | 
 **email** | **String** |  | 
 **address** | [**Address**](Address.md) |  | 
 **borrowStatus** | **String** |  |  [optional]
-**id** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**balanceDue** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**deposit** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**id** | **Integer** |  |  [optional]
+**balanceDue** | **Integer** |  |  [optional]
+**deposit** | **Integer** |  |  [optional]
 **numBooks** | **String** |  |  [optional]

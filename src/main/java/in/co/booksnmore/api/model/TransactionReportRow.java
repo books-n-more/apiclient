@@ -28,10 +28,10 @@ import android.os.Parcel;
  * TransactionReportRow
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class TransactionReportRow implements Parcelable {
   @SerializedName("amount")
-  private BigDecimal amount = null;
+  private Integer amount = null;
 
   @SerializedName("author")
   private String author = null;
@@ -56,7 +56,7 @@ public class TransactionReportRow implements Parcelable {
 
   public TransactionReportRow() {
   }
-  public TransactionReportRow amount(BigDecimal amount) {
+  public TransactionReportRow amount(Integer amount) {
     this.amount = amount;
     return this;
   }
@@ -66,11 +66,11 @@ public class TransactionReportRow implements Parcelable {
    * @return amount
   **/
   @Schema(description = "")
-  public BigDecimal getAmount() {
+  public Integer getAmount() {
     return amount;
   }
 
-  public void setAmount(BigDecimal amount) {
+  public void setAmount(Integer amount) {
     this.amount = amount;
   }
 
@@ -267,7 +267,7 @@ public class TransactionReportRow implements Parcelable {
   }
 
   TransactionReportRow(Parcel in) {
-    amount = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    amount = (Integer)in.readValue(null);
     author = (String)in.readValue(null);
     memberId = (String)in.readValue(null);
     name = (String)in.readValue(null);

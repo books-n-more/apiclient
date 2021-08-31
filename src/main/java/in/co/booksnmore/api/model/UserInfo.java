@@ -22,20 +22,19 @@ import com.google.gson.stream.JsonWriter;
 import in.co.booksnmore.api.model.Address;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * UserInfo
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class UserInfo implements Parcelable {
   @SerializedName("userType")
-  private BigDecimal userType = null;
+  private Integer userType = null;
 
   @SerializedName("numDeliveries")
-  private BigDecimal numDeliveries = null;
+  private Integer numDeliveries = null;
 
   @SerializedName("name")
   private String name = null;
@@ -56,20 +55,20 @@ public class UserInfo implements Parcelable {
   private String borrowStatus = null;
 
   @SerializedName("id")
-  private BigDecimal id = null;
+  private Integer id = null;
 
   @SerializedName("balanceDue")
-  private BigDecimal balanceDue = null;
+  private Integer balanceDue = null;
 
   @SerializedName("deposit")
-  private BigDecimal deposit = null;
+  private Integer deposit = null;
 
   @SerializedName("numBooks")
   private String numBooks = null;
 
   public UserInfo() {
   }
-  public UserInfo userType(BigDecimal userType) {
+  public UserInfo userType(Integer userType) {
     this.userType = userType;
     return this;
   }
@@ -79,15 +78,15 @@ public class UserInfo implements Parcelable {
    * @return userType
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getUserType() {
+  public Integer getUserType() {
     return userType;
   }
 
-  public void setUserType(BigDecimal userType) {
+  public void setUserType(Integer userType) {
     this.userType = userType;
   }
 
-  public UserInfo numDeliveries(BigDecimal numDeliveries) {
+  public UserInfo numDeliveries(Integer numDeliveries) {
     this.numDeliveries = numDeliveries;
     return this;
   }
@@ -97,11 +96,11 @@ public class UserInfo implements Parcelable {
    * @return numDeliveries
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getNumDeliveries() {
+  public Integer getNumDeliveries() {
     return numDeliveries;
   }
 
-  public void setNumDeliveries(BigDecimal numDeliveries) {
+  public void setNumDeliveries(Integer numDeliveries) {
     this.numDeliveries = numDeliveries;
   }
 
@@ -213,7 +212,7 @@ public class UserInfo implements Parcelable {
     this.borrowStatus = borrowStatus;
   }
 
-  public UserInfo id(BigDecimal id) {
+  public UserInfo id(Integer id) {
     this.id = id;
     return this;
   }
@@ -223,15 +222,15 @@ public class UserInfo implements Parcelable {
    * @return id
   **/
   @Schema(description = "")
-  public BigDecimal getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(BigDecimal id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
-  public UserInfo balanceDue(BigDecimal balanceDue) {
+  public UserInfo balanceDue(Integer balanceDue) {
     this.balanceDue = balanceDue;
     return this;
   }
@@ -241,15 +240,15 @@ public class UserInfo implements Parcelable {
    * @return balanceDue
   **/
   @Schema(description = "")
-  public BigDecimal getBalanceDue() {
+  public Integer getBalanceDue() {
     return balanceDue;
   }
 
-  public void setBalanceDue(BigDecimal balanceDue) {
+  public void setBalanceDue(Integer balanceDue) {
     this.balanceDue = balanceDue;
   }
 
-  public UserInfo deposit(BigDecimal deposit) {
+  public UserInfo deposit(Integer deposit) {
     this.deposit = deposit;
     return this;
   }
@@ -259,11 +258,11 @@ public class UserInfo implements Parcelable {
    * @return deposit
   **/
   @Schema(description = "")
-  public BigDecimal getDeposit() {
+  public Integer getDeposit() {
     return deposit;
   }
 
-  public void setDeposit(BigDecimal deposit) {
+  public void setDeposit(Integer deposit) {
     this.deposit = deposit;
   }
 
@@ -364,17 +363,17 @@ public class UserInfo implements Parcelable {
   }
 
   UserInfo(Parcel in) {
-    userType = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    numDeliveries = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    userType = (Integer)in.readValue(null);
+    numDeliveries = (Integer)in.readValue(null);
     name = (String)in.readValue(null);
     sex = (String)in.readValue(null);
     phone = (String)in.readValue(null);
     email = (String)in.readValue(null);
     address = (Address)in.readValue(Address.class.getClassLoader());
     borrowStatus = (String)in.readValue(null);
-    id = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    balanceDue = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    deposit = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    id = (Integer)in.readValue(null);
+    balanceDue = (Integer)in.readValue(null);
+    deposit = (Integer)in.readValue(null);
     numBooks = (String)in.readValue(null);
   }
 

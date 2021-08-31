@@ -4,5 +4,5 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **errorCode** | **Integer** |  | 
-**balanceDue** | [**BigDecimal**](BigDecimal.md) |  | 
-**futureDue** | [**BigDecimal**](BigDecimal.md) |  | 
+**balanceDue** | **Integer** |  | 
+**futureDue** | **Integer** |  | 

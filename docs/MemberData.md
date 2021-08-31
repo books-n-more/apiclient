@@ -3,5 +3,5 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errorCode** | [**BigDecimal**](BigDecimal.md) |  | 
+**errorCode** | **Integer** |  | 
 **memberData** | [**User**](User.md) |  |  [optional]

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import in.co.booksnmore.api.model.BookData;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.Parcelable;
@@ -31,17 +30,17 @@ import android.os.Parcel;
  * AdminBookListData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class AdminBookListData implements Parcelable {
   @SerializedName("errorCode")
-  private BigDecimal errorCode = null;
+  private Integer errorCode = null;
 
   @SerializedName("books")
   private List<BookData> books = null;
 
   public AdminBookListData() {
   }
-  public AdminBookListData errorCode(BigDecimal errorCode) {
+  public AdminBookListData errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -51,11 +50,11 @@ public class AdminBookListData implements Parcelable {
    * @return errorCode
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(BigDecimal errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 
@@ -134,7 +133,7 @@ public class AdminBookListData implements Parcelable {
   }
 
   AdminBookListData(Parcel in) {
-    errorCode = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    errorCode = (Integer)in.readValue(null);
     books = (List<BookData>)in.readValue(BookData.class.getClassLoader());
   }
 

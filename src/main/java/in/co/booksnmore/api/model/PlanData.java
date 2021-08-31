@@ -21,14 +21,13 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * PlanData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class PlanData implements Parcelable {
   @SerializedName("duration")
   private String duration = null;
@@ -37,7 +36,7 @@ public class PlanData implements Parcelable {
   private String nextRenewal = null;
 
   @SerializedName("planId")
-  private BigDecimal planId = null;
+  private Integer planId = null;
 
   @SerializedName("size")
   private String size = null;
@@ -86,7 +85,7 @@ public class PlanData implements Parcelable {
     this.nextRenewal = nextRenewal;
   }
 
-  public PlanData planId(BigDecimal planId) {
+  public PlanData planId(Integer planId) {
     this.planId = planId;
     return this;
   }
@@ -96,11 +95,11 @@ public class PlanData implements Parcelable {
    * @return planId
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getPlanId() {
+  public Integer getPlanId() {
     return planId;
   }
 
-  public void setPlanId(BigDecimal planId) {
+  public void setPlanId(Integer planId) {
     this.planId = planId;
   }
 
@@ -221,7 +220,7 @@ public class PlanData implements Parcelable {
   PlanData(Parcel in) {
     duration = (String)in.readValue(null);
     nextRenewal = (String)in.readValue(null);
-    planId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    planId = (Integer)in.readValue(null);
     size = (String)in.readValue(null);
     status = (String)in.readValue(null);
     warnRenew = (Boolean)in.readValue(null);

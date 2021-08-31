@@ -21,20 +21,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * GetAuthKeyRespone
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class GetAuthKeyRespone implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;
 
   @SerializedName("errorCode")
-  private BigDecimal errorCode = null;
+  private Integer errorCode = null;
 
   public GetAuthKeyRespone() {
   }
@@ -56,7 +55,7 @@ public class GetAuthKeyRespone implements Parcelable {
     this.authKey = authKey;
   }
 
-  public GetAuthKeyRespone errorCode(BigDecimal errorCode) {
+  public GetAuthKeyRespone errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -66,11 +65,11 @@ public class GetAuthKeyRespone implements Parcelable {
    * @return errorCode
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(BigDecimal errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 
@@ -124,7 +123,7 @@ public class GetAuthKeyRespone implements Parcelable {
 
   GetAuthKeyRespone(Parcel in) {
     authKey = (String)in.readValue(null);
-    errorCode = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    errorCode = (Integer)in.readValue(null);
   }
 
   public int describeContents() {

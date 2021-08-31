@@ -3,5 +3,5 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errorCode** | [**BigDecimal**](BigDecimal.md) |  | 
+**errorCode** | **Integer** |  | 
 **manifest** | [**List&lt;ManifestDataManifest&gt;**](ManifestDataManifest.md) |  | 

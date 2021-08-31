@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **numBooks** | **Integer** |  | 
 **planDuration** | **String** |  | 
 **planSize** | **String** |  | 
-**numMonths** | [**BigDecimal**](BigDecimal.md) |  | 
+**numMonths** | **Integer** |  | 

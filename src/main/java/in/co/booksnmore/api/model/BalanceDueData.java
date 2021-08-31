@@ -21,23 +21,22 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * BalanceDueData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class BalanceDueData implements Parcelable {
   @SerializedName("errorCode")
   private Integer errorCode = null;
 
   @SerializedName("balanceDue")
-  private BigDecimal balanceDue = null;
+  private Integer balanceDue = null;
 
   @SerializedName("futureDue")
-  private BigDecimal futureDue = null;
+  private Integer futureDue = null;
 
   public BalanceDueData() {
   }
@@ -59,7 +58,7 @@ public class BalanceDueData implements Parcelable {
     this.errorCode = errorCode;
   }
 
-  public BalanceDueData balanceDue(BigDecimal balanceDue) {
+  public BalanceDueData balanceDue(Integer balanceDue) {
     this.balanceDue = balanceDue;
     return this;
   }
@@ -69,15 +68,15 @@ public class BalanceDueData implements Parcelable {
    * @return balanceDue
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getBalanceDue() {
+  public Integer getBalanceDue() {
     return balanceDue;
   }
 
-  public void setBalanceDue(BigDecimal balanceDue) {
+  public void setBalanceDue(Integer balanceDue) {
     this.balanceDue = balanceDue;
   }
 
-  public BalanceDueData futureDue(BigDecimal futureDue) {
+  public BalanceDueData futureDue(Integer futureDue) {
     this.futureDue = futureDue;
     return this;
   }
@@ -87,11 +86,11 @@ public class BalanceDueData implements Parcelable {
    * @return futureDue
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getFutureDue() {
+  public Integer getFutureDue() {
     return futureDue;
   }
 
-  public void setFutureDue(BigDecimal futureDue) {
+  public void setFutureDue(Integer futureDue) {
     this.futureDue = futureDue;
   }
 
@@ -148,8 +147,8 @@ public class BalanceDueData implements Parcelable {
 
   BalanceDueData(Parcel in) {
     errorCode = (Integer)in.readValue(null);
-    balanceDue = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    futureDue = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    balanceDue = (Integer)in.readValue(null);
+    futureDue = (Integer)in.readValue(null);
   }
 
   public int describeContents() {

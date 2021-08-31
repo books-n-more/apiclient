@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errorCode** | [**BigDecimal**](BigDecimal.md) |  | 
-**joiningFee** | [**BigDecimal**](BigDecimal.md) |  | 
+**errorCode** | **Integer** |  | 
+**joiningFee** | **Integer** |  | 
 **plans** | [**List&lt;PlanInfoItem&gt;**](PlanInfoItem.md) |  | 

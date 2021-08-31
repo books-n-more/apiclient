@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import in.co.booksnmore.api.model.PlanInfoItem;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.Parcelable;
@@ -31,20 +30,20 @@ import android.os.Parcel;
  * PlanInfo
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class PlanInfo implements Parcelable {
   @SerializedName("errorCode")
-  private BigDecimal errorCode = null;
+  private Integer errorCode = null;
 
   @SerializedName("joiningFee")
-  private BigDecimal joiningFee = null;
+  private Integer joiningFee = null;
 
   @SerializedName("plans")
   private List<PlanInfoItem> plans = new ArrayList<PlanInfoItem>();
 
   public PlanInfo() {
   }
-  public PlanInfo errorCode(BigDecimal errorCode) {
+  public PlanInfo errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -54,15 +53,15 @@ public class PlanInfo implements Parcelable {
    * @return errorCode
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(BigDecimal errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 
-  public PlanInfo joiningFee(BigDecimal joiningFee) {
+  public PlanInfo joiningFee(Integer joiningFee) {
     this.joiningFee = joiningFee;
     return this;
   }
@@ -72,11 +71,11 @@ public class PlanInfo implements Parcelable {
    * @return joiningFee
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getJoiningFee() {
+  public Integer getJoiningFee() {
     return joiningFee;
   }
 
-  public void setJoiningFee(BigDecimal joiningFee) {
+  public void setJoiningFee(Integer joiningFee) {
     this.joiningFee = joiningFee;
   }
 
@@ -155,8 +154,8 @@ public class PlanInfo implements Parcelable {
   }
 
   PlanInfo(Parcel in) {
-    errorCode = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    joiningFee = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    errorCode = (Integer)in.readValue(null);
+    joiningFee = (Integer)in.readValue(null);
     plans = (List<PlanInfoItem>)in.readValue(PlanInfoItem.class.getClassLoader());
   }
 

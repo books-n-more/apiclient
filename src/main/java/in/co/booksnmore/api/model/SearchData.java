@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import in.co.booksnmore.api.model.BookData;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.Parcelable;
@@ -31,19 +30,19 @@ import android.os.Parcel;
  * SearchData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class SearchData implements Parcelable {
   @SerializedName("startBook")
-  private BigDecimal startBook = null;
+  private Integer startBook = null;
 
   @SerializedName("booksMatched")
-  private BigDecimal booksMatched = null;
+  private Integer booksMatched = null;
 
   @SerializedName("endBook")
-  private BigDecimal endBook = null;
+  private Integer endBook = null;
 
   @SerializedName("errorCode")
-  private BigDecimal errorCode = null;
+  private Integer errorCode = null;
 
   @SerializedName("books")
   private List<BookData> books = null;
@@ -53,7 +52,7 @@ public class SearchData implements Parcelable {
 
   public SearchData() {
   }
-  public SearchData startBook(BigDecimal startBook) {
+  public SearchData startBook(Integer startBook) {
     this.startBook = startBook;
     return this;
   }
@@ -63,15 +62,15 @@ public class SearchData implements Parcelable {
    * @return startBook
   **/
   @Schema(description = "")
-  public BigDecimal getStartBook() {
+  public Integer getStartBook() {
     return startBook;
   }
 
-  public void setStartBook(BigDecimal startBook) {
+  public void setStartBook(Integer startBook) {
     this.startBook = startBook;
   }
 
-  public SearchData booksMatched(BigDecimal booksMatched) {
+  public SearchData booksMatched(Integer booksMatched) {
     this.booksMatched = booksMatched;
     return this;
   }
@@ -81,15 +80,15 @@ public class SearchData implements Parcelable {
    * @return booksMatched
   **/
   @Schema(description = "")
-  public BigDecimal getBooksMatched() {
+  public Integer getBooksMatched() {
     return booksMatched;
   }
 
-  public void setBooksMatched(BigDecimal booksMatched) {
+  public void setBooksMatched(Integer booksMatched) {
     this.booksMatched = booksMatched;
   }
 
-  public SearchData endBook(BigDecimal endBook) {
+  public SearchData endBook(Integer endBook) {
     this.endBook = endBook;
     return this;
   }
@@ -99,15 +98,15 @@ public class SearchData implements Parcelable {
    * @return endBook
   **/
   @Schema(description = "")
-  public BigDecimal getEndBook() {
+  public Integer getEndBook() {
     return endBook;
   }
 
-  public void setEndBook(BigDecimal endBook) {
+  public void setEndBook(Integer endBook) {
     this.endBook = endBook;
   }
 
-  public SearchData errorCode(BigDecimal errorCode) {
+  public SearchData errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -117,11 +116,11 @@ public class SearchData implements Parcelable {
    * @return errorCode
   **/
   @Schema(description = "")
-  public BigDecimal getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(BigDecimal errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 
@@ -230,10 +229,10 @@ public class SearchData implements Parcelable {
   }
 
   SearchData(Parcel in) {
-    startBook = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    booksMatched = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    endBook = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    errorCode = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    startBook = (Integer)in.readValue(null);
+    booksMatched = (Integer)in.readValue(null);
+    endBook = (Integer)in.readValue(null);
+    errorCode = (Integer)in.readValue(null);
     books = (List<BookData>)in.readValue(BookData.class.getClassLoader());
     borrowStatus = (String)in.readValue(null);
   }

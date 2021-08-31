@@ -4,4 +4,4 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authKey** | **String** |  |  [optional]
-**errorCode** | [**BigDecimal**](BigDecimal.md) |  | 
+**errorCode** | **Integer** |  | 

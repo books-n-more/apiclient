@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**amount** | **Integer** |  |  [optional]
 **author** | **String** |  |  [optional]
 **memberId** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]

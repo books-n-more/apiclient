@@ -21,14 +21,13 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * SearchBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class SearchBody implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;
@@ -37,10 +36,10 @@ public class SearchBody implements Parcelable {
   private String search = null;
 
   @SerializedName("start")
-  private BigDecimal start = null;
+  private Integer start = null;
 
   @SerializedName("numBooks")
-  private BigDecimal numBooks = null;
+  private Integer numBooks = null;
 
   public SearchBody() {
   }
@@ -80,7 +79,7 @@ public class SearchBody implements Parcelable {
     this.search = search;
   }
 
-  public SearchBody start(BigDecimal start) {
+  public SearchBody start(Integer start) {
     this.start = start;
     return this;
   }
@@ -90,15 +89,15 @@ public class SearchBody implements Parcelable {
    * @return start
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getStart() {
+  public Integer getStart() {
     return start;
   }
 
-  public void setStart(BigDecimal start) {
+  public void setStart(Integer start) {
     this.start = start;
   }
 
-  public SearchBody numBooks(BigDecimal numBooks) {
+  public SearchBody numBooks(Integer numBooks) {
     this.numBooks = numBooks;
     return this;
   }
@@ -108,11 +107,11 @@ public class SearchBody implements Parcelable {
    * @return numBooks
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getNumBooks() {
+  public Integer getNumBooks() {
     return numBooks;
   }
 
-  public void setNumBooks(BigDecimal numBooks) {
+  public void setNumBooks(Integer numBooks) {
     this.numBooks = numBooks;
   }
 
@@ -173,8 +172,8 @@ public class SearchBody implements Parcelable {
   SearchBody(Parcel in) {
     authKey = (String)in.readValue(null);
     search = (String)in.readValue(null);
-    start = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
-    numBooks = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    start = (Integer)in.readValue(null);
+    numBooks = (Integer)in.readValue(null);
   }
 
   public int describeContents() {

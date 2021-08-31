@@ -21,14 +21,13 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
  * PlanInfoItem
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-27T05:47:21.813Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:33:57.894Z[GMT]")
 public class PlanInfoItem implements Parcelable {
   @SerializedName("cost")
   private Integer cost = null;
@@ -49,7 +48,7 @@ public class PlanInfoItem implements Parcelable {
   private String planSize = null;
 
   @SerializedName("numMonths")
-  private BigDecimal numMonths = null;
+  private Integer numMonths = null;
 
   public PlanInfoItem() {
   }
@@ -161,7 +160,7 @@ public class PlanInfoItem implements Parcelable {
     this.planSize = planSize;
   }
 
-  public PlanInfoItem numMonths(BigDecimal numMonths) {
+  public PlanInfoItem numMonths(Integer numMonths) {
     this.numMonths = numMonths;
     return this;
   }
@@ -171,11 +170,11 @@ public class PlanInfoItem implements Parcelable {
    * @return numMonths
   **/
   @Schema(required = true, description = "")
-  public BigDecimal getNumMonths() {
+  public Integer getNumMonths() {
     return numMonths;
   }
 
-  public void setNumMonths(BigDecimal numMonths) {
+  public void setNumMonths(Integer numMonths) {
     this.numMonths = numMonths;
   }
 
@@ -249,7 +248,7 @@ public class PlanInfoItem implements Parcelable {
     numBooks = (Integer)in.readValue(null);
     planDuration = (String)in.readValue(null);
     planSize = (String)in.readValue(null);
-    numMonths = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
+    numMonths = (Integer)in.readValue(null);
   }
 
   public int describeContents() {
