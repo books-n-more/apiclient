@@ -38,6 +38,7 @@ import in.co.booksnmore.api.model.SubstituteBookData;
 import in.co.booksnmore.api.model.TransactionReport;
 import in.co.booksnmore.api.model.UserLoginBody;
 import in.co.booksnmore.api.model.VerifyKeyBody;
+import in.co.booksnmore.api.model.VerifyKeyReturn;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -897,13 +898,13 @@ public interface DefaultApi {
    * 
    * verify an auth key
    * @param body  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @return Call&lt;VerifyKeyReturn&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("verifyKey")
-  Call<BaseError> postVerifyKey(
+  Call<VerifyKeyReturn> postVerifyKey(
                     @retrofit2.http.Body VerifyKeyBody body    
   );
 

@@ -31,6 +31,7 @@ import in.co.booksnmore.api.model.SubstituteBookData;
 import in.co.booksnmore.api.model.TransactionReport;
 import in.co.booksnmore.api.model.UserLoginBody;
 import in.co.booksnmore.api.model.VerifyKeyBody;
+import in.co.booksnmore.api.model.VerifyKeyReturn;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -823,7 +824,7 @@ public class DefaultApiTest {
     @Test
     public void postVerifyKeyTest() {
         VerifyKeyBody body = null;
-        // BaseError response = api.postVerifyKey(body);
+        // VerifyKeyReturn response = api.postVerifyKey(body);
 
         // TODO: test validations
     }

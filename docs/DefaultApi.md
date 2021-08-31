@@ -2839,7 +2839,7 @@ No authorization required
 
 <a name="postVerifyKey"></a>
 # **postVerifyKey**
-> BaseError postVerifyKey(body)
+> VerifyKeyReturn postVerifyKey(body)
 
 
 
@@ -2855,7 +2855,7 @@ verify an auth key
 DefaultApi apiInstance = new DefaultApi();
 VerifyKeyBody body = new VerifyKeyBody(); // VerifyKeyBody | 
 try {
-    BaseError result = apiInstance.postVerifyKey(body);
+    VerifyKeyReturn result = apiInstance.postVerifyKey(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#postVerifyKey");
@@ -2871,7 +2871,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseError**](BaseError.md)
+[**VerifyKeyReturn**](VerifyKeyReturn.md)
 
 ### Authorization
 

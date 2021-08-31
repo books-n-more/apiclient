@@ -24,23 +24,20 @@ import java.io.IOException;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
- * BalanceDueData
+ * VerifyKeyReturn
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:36:48.030Z[GMT]")
-public class BalanceDueData implements Parcelable {
+public class VerifyKeyReturn implements Parcelable {
   @SerializedName("errorCode")
   private Integer errorCode = null;
 
-  @SerializedName("balanceDue")
-  private Integer balanceDue = null;
+  @SerializedName("authKey")
+  private String authKey = null;
 
-  @SerializedName("futureDue")
-  private Integer futureDue = null;
-
-  public BalanceDueData() {
+  public VerifyKeyReturn() {
   }
-  public BalanceDueData errorCode(Integer errorCode) {
+  public VerifyKeyReturn errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -49,7 +46,7 @@ public class BalanceDueData implements Parcelable {
    * Get errorCode
    * @return errorCode
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getErrorCode() {
     return errorCode;
   }
@@ -58,40 +55,22 @@ public class BalanceDueData implements Parcelable {
     this.errorCode = errorCode;
   }
 
-  public BalanceDueData balanceDue(Integer balanceDue) {
-    this.balanceDue = balanceDue;
+  public VerifyKeyReturn authKey(String authKey) {
+    this.authKey = authKey;
     return this;
   }
 
    /**
-   * Get balanceDue
-   * @return balanceDue
+   * Get authKey
+   * @return authKey
   **/
-  @Schema(required = true, description = "")
-  public Integer getBalanceDue() {
-    return balanceDue;
+  @Schema(description = "")
+  public String getAuthKey() {
+    return authKey;
   }
 
-  public void setBalanceDue(Integer balanceDue) {
-    this.balanceDue = balanceDue;
-  }
-
-  public BalanceDueData futureDue(Integer futureDue) {
-    this.futureDue = futureDue;
-    return this;
-  }
-
-   /**
-   * Get futureDue
-   * @return futureDue
-  **/
-  @Schema(required = true, description = "")
-  public Integer getFutureDue() {
-    return futureDue;
-  }
-
-  public void setFutureDue(Integer futureDue) {
-    this.futureDue = futureDue;
+  public void setAuthKey(String authKey) {
+    this.authKey = authKey;
   }
 
 
@@ -103,26 +82,24 @@ public class BalanceDueData implements Parcelable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BalanceDueData balanceDueData = (BalanceDueData) o;
-    return Objects.equals(this.errorCode, balanceDueData.errorCode) &&
-        Objects.equals(this.balanceDue, balanceDueData.balanceDue) &&
-        Objects.equals(this.futureDue, balanceDueData.futureDue);
+    VerifyKeyReturn verifyKeyReturn = (VerifyKeyReturn) o;
+    return Objects.equals(this.errorCode, verifyKeyReturn.errorCode) &&
+        Objects.equals(this.authKey, verifyKeyReturn.authKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errorCode, balanceDue, futureDue);
+    return Objects.hash(errorCode, authKey);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BalanceDueData {\n");
+    sb.append("class VerifyKeyReturn {\n");
     
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-    sb.append("    balanceDue: ").append(toIndentedString(balanceDue)).append("\n");
-    sb.append("    futureDue: ").append(toIndentedString(futureDue)).append("\n");
+    sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,26 +118,24 @@ public class BalanceDueData implements Parcelable {
 
   public void writeToParcel(Parcel out, int flags) {
     out.writeValue(errorCode);
-    out.writeValue(balanceDue);
-    out.writeValue(futureDue);
+    out.writeValue(authKey);
   }
 
-  BalanceDueData(Parcel in) {
+  VerifyKeyReturn(Parcel in) {
     errorCode = (Integer)in.readValue(null);
-    balanceDue = (Integer)in.readValue(null);
-    futureDue = (Integer)in.readValue(null);
+    authKey = (String)in.readValue(null);
   }
 
   public int describeContents() {
     return 0;
   }
 
-  public static final Parcelable.Creator<BalanceDueData> CREATOR = new Parcelable.Creator<BalanceDueData>() {
-    public BalanceDueData createFromParcel(Parcel in) {
-      return new BalanceDueData(in);
+  public static final Parcelable.Creator<VerifyKeyReturn> CREATOR = new Parcelable.Creator<VerifyKeyReturn>() {
+    public VerifyKeyReturn createFromParcel(Parcel in) {
+      return new VerifyKeyReturn(in);
     }
-    public BalanceDueData[] newArray(int size) {
-      return new BalanceDueData[size];
+    public VerifyKeyReturn[] newArray(int size) {
+      return new VerifyKeyReturn[size];
     }
   };
 }
