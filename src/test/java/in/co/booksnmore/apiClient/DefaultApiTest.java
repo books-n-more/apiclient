@@ -494,6 +494,19 @@ public class DefaultApiTest {
     /**
      * 
      *
+     * Admin Search
+     */
+    @Test
+    public void postAdminSearchTest() {
+        SearchBody body = null;
+        // SearchData response = api.postAdminSearch(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
      * Substitute Books
      */
     @Test
@@ -551,7 +564,7 @@ public class DefaultApiTest {
     @Test
     public void postAdminVerifyKeyTest() {
         VerifyKeyBody body = null;
-        // BaseError response = api.postAdminVerifyKey(body);
+        // VerifyKeyReturn response = api.postAdminVerifyKey(body);
 
         // TODO: test validations
     }

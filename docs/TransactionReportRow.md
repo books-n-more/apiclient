@@ -11,3 +11,4 @@ Name | Type | Description | Notes
 **transDate** | **String** |  |  [optional]
 **transId** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **transType** | **String** |  |  [optional]
+**bookId** | **String** |  |  [optional]

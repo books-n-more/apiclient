@@ -3,5 +3,5 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errorCode** | **Integer** |  |  [optional]
+**errorCode** | **Integer** |  | 
 **authKey** | **String** |  |  [optional]

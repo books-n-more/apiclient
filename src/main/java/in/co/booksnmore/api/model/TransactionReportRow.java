@@ -28,7 +28,7 @@ import android.os.Parcel;
  * TransactionReportRow
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:36:48.030Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-01T11:17:49.897Z[GMT]")
 public class TransactionReportRow implements Parcelable {
   @SerializedName("amount")
   private Integer amount = null;
@@ -53,6 +53,9 @@ public class TransactionReportRow implements Parcelable {
 
   @SerializedName("transType")
   private String transType = null;
+
+  @SerializedName("bookId")
+  private String bookId = null;
 
   public TransactionReportRow() {
   }
@@ -200,6 +203,24 @@ public class TransactionReportRow implements Parcelable {
     this.transType = transType;
   }
 
+  public TransactionReportRow bookId(String bookId) {
+    this.bookId = bookId;
+    return this;
+  }
+
+   /**
+   * Get bookId
+   * @return bookId
+  **/
+  @Schema(description = "")
+  public String getBookId() {
+    return bookId;
+  }
+
+  public void setBookId(String bookId) {
+    this.bookId = bookId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,12 +238,13 @@ public class TransactionReportRow implements Parcelable {
         Objects.equals(this.title, transactionReportRow.title) &&
         Objects.equals(this.transDate, transactionReportRow.transDate) &&
         Objects.equals(this.transId, transactionReportRow.transId) &&
-        Objects.equals(this.transType, transactionReportRow.transType);
+        Objects.equals(this.transType, transactionReportRow.transType) &&
+        Objects.equals(this.bookId, transactionReportRow.bookId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, author, memberId, name, title, transDate, transId, transType);
+    return Objects.hash(amount, author, memberId, name, title, transDate, transId, transType, bookId);
   }
 
 
@@ -239,6 +261,7 @@ public class TransactionReportRow implements Parcelable {
     sb.append("    transDate: ").append(toIndentedString(transDate)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    transType: ").append(toIndentedString(transType)).append("\n");
+    sb.append("    bookId: ").append(toIndentedString(bookId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -264,6 +287,7 @@ public class TransactionReportRow implements Parcelable {
     out.writeValue(transDate);
     out.writeValue(transId);
     out.writeValue(transType);
+    out.writeValue(bookId);
   }
 
   TransactionReportRow(Parcel in) {
@@ -275,6 +299,7 @@ public class TransactionReportRow implements Parcelable {
     transDate = (String)in.readValue(null);
     transId = (BigDecimal)in.readValue(BigDecimal.class.getClassLoader());
     transType = (String)in.readValue(null);
+    bookId = (String)in.readValue(null);
   }
 
   public int describeContents() {

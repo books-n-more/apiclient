@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**postAdminReturn**](DefaultApi.md#postAdminReturn) | **POST** admin/return | 
 [**postAdminReturned**](DefaultApi.md#postAdminReturned) | **POST** admin/returned | 
 [**postAdminRevivePlan**](DefaultApi.md#postAdminRevivePlan) | **POST** admin/revivePlan | 
+[**postAdminSearch**](DefaultApi.md#postAdminSearch) | **POST** admin/search | 
 [**postAdminSubstitute**](DefaultApi.md#postAdminSubstitute) | **POST** admin/substitute | 
 [**postAdminSuspendPlan**](DefaultApi.md#postAdminSuspendPlan) | **POST** admin/suspendPlan | 
 [**postAdminTransactionReport**](DefaultApi.md#postAdminTransactionReport) | **POST** admin/transactionReport | 
@@ -1712,6 +1713,51 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postAdminSearch"></a>
+# **postAdminSearch**
+> SearchData postAdminSearch(body)
+
+
+
+Admin Search
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+SearchBody body = new SearchBody(); // SearchBody | 
+try {
+    SearchData result = apiInstance.postAdminSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SearchBody**](SearchBody.md)|  | [optional]
+
+### Return type
+
+[**SearchData**](SearchData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postAdminSubstitute"></a>
 # **postAdminSubstitute**
 > BaseError postAdminSubstitute(body)
@@ -1894,7 +1940,7 @@ No authorization required
 
 <a name="postAdminVerifyKey"></a>
 # **postAdminVerifyKey**
-> BaseError postAdminVerifyKey(body)
+> VerifyKeyReturn postAdminVerifyKey(body)
 
 
 
@@ -1910,7 +1956,7 @@ verify an admin auth key
 DefaultApi apiInstance = new DefaultApi();
 VerifyKeyBody body = new VerifyKeyBody(); // VerifyKeyBody | 
 try {
-    BaseError result = apiInstance.postAdminVerifyKey(body);
+    VerifyKeyReturn result = apiInstance.postAdminVerifyKey(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#postAdminVerifyKey");
@@ -1926,7 +1972,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseError**](BaseError.md)
+[**VerifyKeyReturn**](VerifyKeyReturn.md)
 
 ### Authorization
 

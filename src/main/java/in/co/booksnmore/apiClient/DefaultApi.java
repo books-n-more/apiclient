@@ -546,6 +546,20 @@ public interface DefaultApi {
 
   /**
    * 
+   * Admin Search
+   * @param body  (optional)
+   * @return Call&lt;SearchData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/search")
+  Call<SearchData> postAdminSearch(
+                    @retrofit2.http.Body SearchBody body    
+  );
+
+  /**
+   * 
    * Substitute Books
    * @param body  (optional)
    * @return Call&lt;BaseError&gt;
@@ -604,13 +618,13 @@ public interface DefaultApi {
    * 
    * verify an admin auth key
    * @param body  (optional)
-   * @return Call&lt;BaseError&gt;
+   * @return Call&lt;VerifyKeyReturn&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("admin/verifyKey")
-  Call<BaseError> postAdminVerifyKey(
+  Call<VerifyKeyReturn> postAdminVerifyKey(
                     @retrofit2.http.Body VerifyKeyBody body    
   );
 

@@ -30,13 +30,16 @@ import android.os.Parcel;
  * TransactionReport
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-31T04:36:48.030Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-01T11:17:49.897Z[GMT]")
 public class TransactionReport implements Parcelable {
   @SerializedName("errorCode")
   private Integer errorCode = null;
 
   @SerializedName("data")
   private List<TransactionReportRow> data = null;
+
+  @SerializedName("totalRecords")
+  private Integer totalRecords = null;
 
   public TransactionReport() {
   }
@@ -49,7 +52,7 @@ public class TransactionReport implements Parcelable {
    * Get errorCode
    * @return errorCode
   **/
-  @Schema(description = "")
+  @Schema(required = true, description = "")
   public Integer getErrorCode() {
     return errorCode;
   }
@@ -84,6 +87,24 @@ public class TransactionReport implements Parcelable {
     this.data = data;
   }
 
+  public TransactionReport totalRecords(Integer totalRecords) {
+    this.totalRecords = totalRecords;
+    return this;
+  }
+
+   /**
+   * Get totalRecords
+   * @return totalRecords
+  **/
+  @Schema(description = "")
+  public Integer getTotalRecords() {
+    return totalRecords;
+  }
+
+  public void setTotalRecords(Integer totalRecords) {
+    this.totalRecords = totalRecords;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -95,12 +116,13 @@ public class TransactionReport implements Parcelable {
     }
     TransactionReport transactionReport = (TransactionReport) o;
     return Objects.equals(this.errorCode, transactionReport.errorCode) &&
-        Objects.equals(this.data, transactionReport.data);
+        Objects.equals(this.data, transactionReport.data) &&
+        Objects.equals(this.totalRecords, transactionReport.totalRecords);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errorCode, data);
+    return Objects.hash(errorCode, data, totalRecords);
   }
 
 
@@ -111,6 +133,7 @@ public class TransactionReport implements Parcelable {
     
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    totalRecords: ").append(toIndentedString(totalRecords)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -130,11 +153,13 @@ public class TransactionReport implements Parcelable {
   public void writeToParcel(Parcel out, int flags) {
     out.writeValue(errorCode);
     out.writeValue(data);
+    out.writeValue(totalRecords);
   }
 
   TransactionReport(Parcel in) {
     errorCode = (Integer)in.readValue(null);
     data = (List<TransactionReportRow>)in.readValue(TransactionReportRow.class.getClassLoader());
+    totalRecords = (Integer)in.readValue(null);
   }
 
   public int describeContents() {
