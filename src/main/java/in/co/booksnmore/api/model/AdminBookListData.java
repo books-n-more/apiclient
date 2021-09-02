@@ -30,7 +30,7 @@ import android.os.Parcel;
  * AdminBookListData
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-01T11:17:49.897Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-02T02:43:51.720Z[GMT]")
 public class AdminBookListData implements Parcelable {
   @SerializedName("errorCode")
   private Integer errorCode = null;

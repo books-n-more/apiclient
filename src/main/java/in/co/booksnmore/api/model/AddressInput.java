@@ -28,7 +28,7 @@ import android.os.Parcel;
  * AddressInput
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-01T11:17:49.897Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-02T02:43:51.720Z[GMT]")
 public class AddressInput implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;
