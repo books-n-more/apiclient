@@ -169,6 +169,32 @@ public class DefaultApiTest {
     /**
      * 
      *
+     * Admin Cancel Ready To Return Book
+     */
+    @Test
+    public void postAdminCancelReadyToReturnBookTest() {
+        AdminActionInput body = null;
+        // MemberData response = api.postAdminCancelReadyToReturnBook(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Admin Cancel Reservation
+     */
+    @Test
+    public void postAdminCancelReserveBookTest() {
+        AdminActionInput body = null;
+        // MemberData response = api.postAdminCancelReserveBook(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
      * Admin Cash In
      */
     @Test

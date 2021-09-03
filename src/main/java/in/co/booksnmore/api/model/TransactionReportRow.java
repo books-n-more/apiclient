@@ -28,7 +28,7 @@ import android.os.Parcel;
  * TransactionReportRow
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-02T02:43:51.720Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-03T18:39:46.830Z[GMT]")
 public class TransactionReportRow implements Parcelable {
   @SerializedName("amount")
   private Integer amount = null;

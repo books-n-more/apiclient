@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *https://{host}*
+All URIs are relative to *http://{host}*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**postAdminAllDelivered**](DefaultApi.md#postAdminAllDelivered) | **POST** admin/allDelivered | 
 [**postAdminBookById**](DefaultApi.md#postAdminBookById) | **POST** admin/bookById | 
 [**postAdminBorrow**](DefaultApi.md#postAdminBorrow) | **POST** admin/borrow | 
+[**postAdminCancelReadyToReturnBook**](DefaultApi.md#postAdminCancelReadyToReturnBook) | **POST** admin/cancelReadyToReturnBook | 
+[**postAdminCancelReserveBook**](DefaultApi.md#postAdminCancelReserveBook) | **POST** admin/cancelReserveBook | 
 [**postAdminCash**](DefaultApi.md#postAdminCash) | **POST** admin/cash | 
 [**postAdminCreateBook**](DefaultApi.md#postAdminCreateBook) | **POST** admin/createBook | 
 [**postAdminCreateMember**](DefaultApi.md#postAdminCreateMember) | **POST** admin/createMember | 
@@ -496,6 +498,96 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/xml, multipart/form-data
+ - **Accept**: application/json
+
+<a name="postAdminCancelReadyToReturnBook"></a>
+# **postAdminCancelReadyToReturnBook**
+> MemberData postAdminCancelReadyToReturnBook(body)
+
+
+
+Admin Cancel Ready To Return Book
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+AdminActionInput body = new AdminActionInput(); // AdminActionInput | 
+try {
+    MemberData result = apiInstance.postAdminCancelReadyToReturnBook(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminCancelReadyToReturnBook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AdminActionInput**](AdminActionInput.md)|  | [optional]
+
+### Return type
+
+[**MemberData**](MemberData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postAdminCancelReserveBook"></a>
+# **postAdminCancelReserveBook**
+> MemberData postAdminCancelReserveBook(body)
+
+
+
+Admin Cancel Reservation
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+AdminActionInput body = new AdminActionInput(); // AdminActionInput | 
+try {
+    MemberData result = apiInstance.postAdminCancelReserveBook(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminCancelReserveBook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AdminActionInput**](AdminActionInput.md)|  | [optional]
+
+### Return type
+
+[**MemberData**](MemberData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="postAdminCash"></a>

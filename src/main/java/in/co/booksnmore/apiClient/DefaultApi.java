@@ -168,6 +168,34 @@ public interface DefaultApi {
 
   /**
    * 
+   * Admin Cancel Ready To Return Book
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/cancelReadyToReturnBook")
+  Call<MemberData> postAdminCancelReadyToReturnBook(
+                    @retrofit2.http.Body AdminActionInput body    
+  );
+
+  /**
+   * 
+   * Admin Cancel Reservation
+   * @param body  (optional)
+   * @return Call&lt;MemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/cancelReserveBook")
+  Call<MemberData> postAdminCancelReserveBook(
+                    @retrofit2.http.Body AdminActionInput body    
+  );
+
+  /**
+   * 
    * Admin Cash In
    * @param body  (optional)
    * @return Call&lt;MemberData&gt;
