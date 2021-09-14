@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *http://{host}*
+All URIs are relative to *https://{host}*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,10 +12,12 @@ Method | HTTP request | Description
 [**postAdminAddDelivery**](DefaultApi.md#postAdminAddDelivery) | **POST** admin/addDelivery | 
 [**postAdminAllDelivered**](DefaultApi.md#postAdminAllDelivered) | **POST** admin/allDelivered | 
 [**postAdminBookById**](DefaultApi.md#postAdminBookById) | **POST** admin/bookById | 
+[**postAdminBookPrefill**](DefaultApi.md#postAdminBookPrefill) | **POST** admin/bookPrefill | 
 [**postAdminBorrow**](DefaultApi.md#postAdminBorrow) | **POST** admin/borrow | 
 [**postAdminCancelReadyToReturnBook**](DefaultApi.md#postAdminCancelReadyToReturnBook) | **POST** admin/cancelReadyToReturnBook | 
 [**postAdminCancelReserveBook**](DefaultApi.md#postAdminCancelReserveBook) | **POST** admin/cancelReserveBook | 
 [**postAdminCash**](DefaultApi.md#postAdminCash) | **POST** admin/cash | 
+[**postAdminCorrectImage**](DefaultApi.md#postAdminCorrectImage) | **POST** admin/correctImage | 
 [**postAdminCreateBook**](DefaultApi.md#postAdminCreateBook) | **POST** admin/createBook | 
 [**postAdminCreateMember**](DefaultApi.md#postAdminCreateMember) | **POST** admin/createMember | 
 [**postAdminCreatePlan**](DefaultApi.md#postAdminCreatePlan) | **POST** admin/createPlan | 
@@ -33,7 +35,9 @@ Method | HTTP request | Description
 [**postAdminLogout**](DefaultApi.md#postAdminLogout) | **POST** admin/logout | 
 [**postAdminManifest**](DefaultApi.md#postAdminManifest) | **POST** admin/manifest | 
 [**postAdminModifyPlan**](DefaultApi.md#postAdminModifyPlan) | **POST** admin/modifyPlan | 
+[**postAdminNextBook**](DefaultApi.md#postAdminNextBook) | **POST** admin/nextBook | 
 [**postAdminPickupFailed**](DefaultApi.md#postAdminPickupFailed) | **POST** admin/pickupFailed | 
+[**postAdminPrevBook**](DefaultApi.md#postAdminPrevBook) | **POST** admin/prevBook | 
 [**postAdminReadyToDispatchBooks**](DefaultApi.md#postAdminReadyToDispatchBooks) | **POST** admin/readyToDispatchBooks | 
 [**postAdminReadyToReturn**](DefaultApi.md#postAdminReadyToReturn) | **POST** admin/readyToReturnBooks | 
 [**postAdminReservedBooks**](DefaultApi.md#postAdminReservedBooks) | **POST** admin/reservedBooks | 
@@ -46,6 +50,7 @@ Method | HTTP request | Description
 [**postAdminTransactionReport**](DefaultApi.md#postAdminTransactionReport) | **POST** admin/transactionReport | 
 [**postAdminUpdatePassword**](DefaultApi.md#postAdminUpdatePassword) | **POST** admin/updatePassword | 
 [**postAdminVerifyKey**](DefaultApi.md#postAdminVerifyKey) | **POST** admin/verifyKey | 
+[**postAdminWrongImage**](DefaultApi.md#postAdminWrongImage) | **POST** admin/wrongImage | 
 [**postBrowseLibrary**](DefaultApi.md#postBrowseLibrary) | **POST** browseLibrary | 
 [**postCancelReadyToReturnBook**](DefaultApi.md#postCancelReadyToReturnBook) | **POST** cancelReadyToReturnBook | 
 [**postCancelReserveBook**](DefaultApi.md#postCancelReserveBook) | **POST** cancelReserveBook | 
@@ -410,6 +415,51 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postAdminBookPrefill"></a>
+# **postAdminBookPrefill**
+> AdminBookByIdData postAdminBookPrefill(body)
+
+
+
+Book Prefill
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+ISBNInput body = new ISBNInput(); // ISBNInput | 
+try {
+    AdminBookByIdData result = apiInstance.postAdminBookPrefill(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminBookPrefill");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ISBNInput**](ISBNInput.md)|  | [optional]
+
+### Return type
+
+[**AdminBookByIdData**](AdminBookByIdData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postAdminBorrow"></a>
 # **postAdminBorrow**
 > MemberData postAdminBorrow(body)
@@ -625,6 +675,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MemberData**](MemberData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postAdminCorrectImage"></a>
+# **postAdminCorrectImage**
+> AdminBookByIdData postAdminCorrectImage(body)
+
+
+
+Correct Image
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+MemberActionInput body = new MemberActionInput(); // MemberActionInput | 
+try {
+    AdminBookByIdData result = apiInstance.postAdminCorrectImage(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminCorrectImage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MemberActionInput**](MemberActionInput.md)|  | [optional]
+
+### Return type
+
+[**AdminBookByIdData**](AdminBookByIdData.md)
 
 ### Authorization
 
@@ -1490,6 +1585,51 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postAdminNextBook"></a>
+# **postAdminNextBook**
+> AdminBookByIdData postAdminNextBook(body)
+
+
+
+Next Book to Verify
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+MemberActionInput body = new MemberActionInput(); // MemberActionInput | 
+try {
+    AdminBookByIdData result = apiInstance.postAdminNextBook(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminNextBook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MemberActionInput**](MemberActionInput.md)|  | [optional]
+
+### Return type
+
+[**AdminBookByIdData**](AdminBookByIdData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postAdminPickupFailed"></a>
 # **postAdminPickupFailed**
 > BaseError postAdminPickupFailed(body)
@@ -1525,6 +1665,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BaseError**](BaseError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postAdminPrevBook"></a>
+# **postAdminPrevBook**
+> AdminBookByIdData postAdminPrevBook(body)
+
+
+
+Prev Book
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+MemberActionInput body = new MemberActionInput(); // MemberActionInput | 
+try {
+    AdminBookByIdData result = apiInstance.postAdminPrevBook(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminPrevBook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MemberActionInput**](MemberActionInput.md)|  | [optional]
+
+### Return type
+
+[**AdminBookByIdData**](AdminBookByIdData.md)
 
 ### Authorization
 
@@ -2065,6 +2250,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**VerifyKeyReturn**](VerifyKeyReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postAdminWrongImage"></a>
+# **postAdminWrongImage**
+> AdminBookByIdData postAdminWrongImage(body)
+
+
+
+Wrong Image
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+MemberActionInput body = new MemberActionInput(); // MemberActionInput | 
+try {
+    AdminBookByIdData result = apiInstance.postAdminWrongImage(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminWrongImage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MemberActionInput**](MemberActionInput.md)|  | [optional]
+
+### Return type
+
+[**AdminBookByIdData**](AdminBookByIdData.md)
 
 ### Authorization
 

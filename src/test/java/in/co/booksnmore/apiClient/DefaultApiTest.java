@@ -16,6 +16,7 @@ import in.co.booksnmore.api.model.CategoriesData;
 import in.co.booksnmore.api.model.DeliveryCostData;
 import in.co.booksnmore.api.model.ErrorData;
 import in.co.booksnmore.api.model.GetAuthKeyRespone;
+import in.co.booksnmore.api.model.ISBNInput;
 import in.co.booksnmore.api.model.InlineResponse200;
 import in.co.booksnmore.api.model.ManifestData;
 import in.co.booksnmore.api.model.MemberActionInput;
@@ -156,6 +157,19 @@ public class DefaultApiTest {
     /**
      * 
      *
+     * Book Prefill
+     */
+    @Test
+    public void postAdminBookPrefillTest() {
+        ISBNInput body = null;
+        // AdminBookByIdData response = api.postAdminBookPrefill(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
      * Admin Borrow
      */
     @Test
@@ -201,6 +215,19 @@ public class DefaultApiTest {
     public void postAdminCashTest() {
         CashInput body = null;
         // MemberData response = api.postAdminCash(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Correct Image
+     */
+    @Test
+    public void postAdminCorrectImageTest() {
+        MemberActionInput body = null;
+        // AdminBookByIdData response = api.postAdminCorrectImage(body);
 
         // TODO: test validations
     }
@@ -429,12 +456,38 @@ public class DefaultApiTest {
     /**
      * 
      *
+     * Next Book to Verify
+     */
+    @Test
+    public void postAdminNextBookTest() {
+        MemberActionInput body = null;
+        // AdminBookByIdData response = api.postAdminNextBook(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
      * Pickup Failed for a book
      */
     @Test
     public void postAdminPickupFailedTest() {
         AdminActionInput body = null;
         // BaseError response = api.postAdminPickupFailed(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Prev Book
+     */
+    @Test
+    public void postAdminPrevBookTest() {
+        MemberActionInput body = null;
+        // AdminBookByIdData response = api.postAdminPrevBook(body);
 
         // TODO: test validations
     }
@@ -591,6 +644,19 @@ public class DefaultApiTest {
     public void postAdminVerifyKeyTest() {
         VerifyKeyBody body = null;
         // VerifyKeyReturn response = api.postAdminVerifyKey(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Wrong Image
+     */
+    @Test
+    public void postAdminWrongImageTest() {
+        MemberActionInput body = null;
+        // AdminBookByIdData response = api.postAdminWrongImage(body);
 
         // TODO: test validations
     }

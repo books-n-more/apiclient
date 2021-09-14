@@ -24,32 +24,53 @@ import java.io.IOException;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
- * BaseError
+ * ISBNInput
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-14T04:05:40.533Z[GMT]")
-public class BaseError implements Parcelable {
-  @SerializedName("errorCode")
-  private Integer errorCode = null;
+public class ISBNInput implements Parcelable {
+  @SerializedName("isbn")
+  private String isbn = null;
 
-  public BaseError() {
+  @SerializedName("authKey")
+  private String authKey = null;
+
+  public ISBNInput() {
   }
-  public BaseError errorCode(Integer errorCode) {
-    this.errorCode = errorCode;
+  public ISBNInput isbn(String isbn) {
+    this.isbn = isbn;
     return this;
   }
 
    /**
-   * Get errorCode
-   * @return errorCode
+   * Get isbn
+   * @return isbn
   **/
   @Schema(required = true, description = "")
-  public Integer getErrorCode() {
-    return errorCode;
+  public String getIsbn() {
+    return isbn;
   }
 
-  public void setErrorCode(Integer errorCode) {
-    this.errorCode = errorCode;
+  public void setIsbn(String isbn) {
+    this.isbn = isbn;
+  }
+
+  public ISBNInput authKey(String authKey) {
+    this.authKey = authKey;
+    return this;
+  }
+
+   /**
+   * Get authKey
+   * @return authKey
+  **/
+  @Schema(required = true, description = "")
+  public String getAuthKey() {
+    return authKey;
+  }
+
+  public void setAuthKey(String authKey) {
+    this.authKey = authKey;
   }
 
 
@@ -61,22 +82,24 @@ public class BaseError implements Parcelable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BaseError baseError = (BaseError) o;
-    return Objects.equals(this.errorCode, baseError.errorCode);
+    ISBNInput isBNInput = (ISBNInput) o;
+    return Objects.equals(this.isbn, isBNInput.isbn) &&
+        Objects.equals(this.authKey, isBNInput.authKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errorCode);
+    return Objects.hash(isbn, authKey);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BaseError {\n");
+    sb.append("class ISBNInput {\n");
     
-    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    isbn: ").append(toIndentedString(isbn)).append("\n");
+    sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -94,23 +117,25 @@ public class BaseError implements Parcelable {
 
 
   public void writeToParcel(Parcel out, int flags) {
-    out.writeValue(errorCode);
+    out.writeValue(isbn);
+    out.writeValue(authKey);
   }
 
-  BaseError(Parcel in) {
-    errorCode = (Integer)in.readValue(null);
+  ISBNInput(Parcel in) {
+    isbn = (String)in.readValue(null);
+    authKey = (String)in.readValue(null);
   }
 
   public int describeContents() {
     return 0;
   }
 
-  public static final Parcelable.Creator<BaseError> CREATOR = new Parcelable.Creator<BaseError>() {
-    public BaseError createFromParcel(Parcel in) {
-      return new BaseError(in);
+  public static final Parcelable.Creator<ISBNInput> CREATOR = new Parcelable.Creator<ISBNInput>() {
+    public ISBNInput createFromParcel(Parcel in) {
+      return new ISBNInput(in);
     }
-    public BaseError[] newArray(int size) {
-      return new BaseError[size];
+    public ISBNInput[] newArray(int size) {
+      return new ISBNInput[size];
     }
   };
 }

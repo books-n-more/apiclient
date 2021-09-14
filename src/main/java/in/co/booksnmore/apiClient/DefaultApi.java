@@ -23,6 +23,7 @@ import in.co.booksnmore.api.model.CategoriesData;
 import in.co.booksnmore.api.model.DeliveryCostData;
 import in.co.booksnmore.api.model.ErrorData;
 import in.co.booksnmore.api.model.GetAuthKeyRespone;
+import in.co.booksnmore.api.model.ISBNInput;
 import in.co.booksnmore.api.model.InlineResponse200;
 import in.co.booksnmore.api.model.ManifestData;
 import in.co.booksnmore.api.model.MemberActionInput;
@@ -140,6 +141,20 @@ public interface DefaultApi {
 
   /**
    * 
+   * Book Prefill
+   * @param body  (optional)
+   * @return Call&lt;AdminBookByIdData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/bookPrefill")
+  Call<AdminBookByIdData> postAdminBookPrefill(
+                    @retrofit2.http.Body ISBNInput body    
+  );
+
+  /**
+   * 
    * Admin Borrow
    * @param body  (optional)
    * @return Call&lt;MemberData&gt;
@@ -206,6 +221,20 @@ public interface DefaultApi {
   @POST("admin/cash")
   Call<MemberData> postAdminCash(
                     @retrofit2.http.Body CashInput body    
+  );
+
+  /**
+   * 
+   * Correct Image
+   * @param body  (optional)
+   * @return Call&lt;AdminBookByIdData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/correctImage")
+  Call<AdminBookByIdData> postAdminCorrectImage(
+                    @retrofit2.http.Body MemberActionInput body    
   );
 
   /**
@@ -476,6 +505,20 @@ public interface DefaultApi {
 
   /**
    * 
+   * Next Book to Verify
+   * @param body  (optional)
+   * @return Call&lt;AdminBookByIdData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/nextBook")
+  Call<AdminBookByIdData> postAdminNextBook(
+                    @retrofit2.http.Body MemberActionInput body    
+  );
+
+  /**
+   * 
    * Pickup Failed for a book
    * @param body  (optional)
    * @return Call&lt;BaseError&gt;
@@ -486,6 +529,20 @@ public interface DefaultApi {
   @POST("admin/pickupFailed")
   Call<BaseError> postAdminPickupFailed(
                     @retrofit2.http.Body AdminActionInput body    
+  );
+
+  /**
+   * 
+   * Prev Book
+   * @param body  (optional)
+   * @return Call&lt;AdminBookByIdData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/prevBook")
+  Call<AdminBookByIdData> postAdminPrevBook(
+                    @retrofit2.http.Body MemberActionInput body    
   );
 
   /**
@@ -654,6 +711,20 @@ public interface DefaultApi {
   @POST("admin/verifyKey")
   Call<VerifyKeyReturn> postAdminVerifyKey(
                     @retrofit2.http.Body VerifyKeyBody body    
+  );
+
+  /**
+   * 
+   * Wrong Image
+   * @param body  (optional)
+   * @return Call&lt;AdminBookByIdData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/wrongImage")
+  Call<AdminBookByIdData> postAdminWrongImage(
+                    @retrofit2.http.Body MemberActionInput body    
   );
 
   /**

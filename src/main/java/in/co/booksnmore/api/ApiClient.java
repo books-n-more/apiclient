@@ -97,7 +97,7 @@ public class ApiClient {
     json = new JSON();
     okBuilder = new OkHttpClient.Builder();
 
-    String baseUrl = "http://{host}";
+    String baseUrl = "https://{host}";
     if (!baseUrl.endsWith("/"))
       baseUrl = baseUrl + "/";
 
