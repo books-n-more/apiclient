@@ -27,7 +27,7 @@ import android.os.Parcel;
  * PasswordUpdateInput
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-14T04:05:40.533Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-18T20:12:33.529Z[GMT]")
 public class PasswordUpdateInput implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;
@@ -37,6 +37,9 @@ public class PasswordUpdateInput implements Parcelable {
 
   @SerializedName("newPassword")
   private String newPassword = null;
+
+  @SerializedName("confirmPassword")
+  private String confirmPassword = null;
 
   public PasswordUpdateInput() {
   }
@@ -94,6 +97,24 @@ public class PasswordUpdateInput implements Parcelable {
     this.newPassword = newPassword;
   }
 
+  public PasswordUpdateInput confirmPassword(String confirmPassword) {
+    this.confirmPassword = confirmPassword;
+    return this;
+  }
+
+   /**
+   * Get confirmPassword
+   * @return confirmPassword
+  **/
+  @Schema(description = "")
+  public String getConfirmPassword() {
+    return confirmPassword;
+  }
+
+  public void setConfirmPassword(String confirmPassword) {
+    this.confirmPassword = confirmPassword;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +127,13 @@ public class PasswordUpdateInput implements Parcelable {
     PasswordUpdateInput passwordUpdateInput = (PasswordUpdateInput) o;
     return Objects.equals(this.authKey, passwordUpdateInput.authKey) &&
         Objects.equals(this.oldPassword, passwordUpdateInput.oldPassword) &&
-        Objects.equals(this.newPassword, passwordUpdateInput.newPassword);
+        Objects.equals(this.newPassword, passwordUpdateInput.newPassword) &&
+        Objects.equals(this.confirmPassword, passwordUpdateInput.confirmPassword);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authKey, oldPassword, newPassword);
+    return Objects.hash(authKey, oldPassword, newPassword, confirmPassword);
   }
 
 
@@ -123,6 +145,7 @@ public class PasswordUpdateInput implements Parcelable {
     sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
     sb.append("    oldPassword: ").append(toIndentedString(oldPassword)).append("\n");
     sb.append("    newPassword: ").append(toIndentedString(newPassword)).append("\n");
+    sb.append("    confirmPassword: ").append(toIndentedString(confirmPassword)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -143,12 +166,14 @@ public class PasswordUpdateInput implements Parcelable {
     out.writeValue(authKey);
     out.writeValue(oldPassword);
     out.writeValue(newPassword);
+    out.writeValue(confirmPassword);
   }
 
   PasswordUpdateInput(Parcel in) {
     authKey = (String)in.readValue(null);
     oldPassword = (String)in.readValue(null);
     newPassword = (String)in.readValue(null);
+    confirmPassword = (String)in.readValue(null);
   }
 
   public int describeContents() {

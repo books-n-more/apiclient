@@ -24,23 +24,23 @@ import java.io.IOException;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
- * UserLoginBody
+ * ForgotPasswordInput
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-18T20:12:33.529Z[GMT]")
-public class UserLoginBody implements Parcelable {
+public class ForgotPasswordInput implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;
 
   @SerializedName("phone")
   private String phone = null;
 
-  @SerializedName("password")
-  private String password = null;
+  @SerializedName("email")
+  private String email = null;
 
-  public UserLoginBody() {
+  public ForgotPasswordInput() {
   }
-  public UserLoginBody authKey(String authKey) {
+  public ForgotPasswordInput authKey(String authKey) {
     this.authKey = authKey;
     return this;
   }
@@ -58,7 +58,7 @@ public class UserLoginBody implements Parcelable {
     this.authKey = authKey;
   }
 
-  public UserLoginBody phone(String phone) {
+  public ForgotPasswordInput phone(String phone) {
     this.phone = phone;
     return this;
   }
@@ -76,22 +76,22 @@ public class UserLoginBody implements Parcelable {
     this.phone = phone;
   }
 
-  public UserLoginBody password(String password) {
-    this.password = password;
+  public ForgotPasswordInput email(String email) {
+    this.email = email;
     return this;
   }
 
    /**
-   * Get password
-   * @return password
+   * Get email
+   * @return email
   **/
   @Schema(required = true, description = "")
-  public String getPassword() {
-    return password;
+  public String getEmail() {
+    return email;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
 
@@ -103,26 +103,26 @@ public class UserLoginBody implements Parcelable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserLoginBody userLoginBody = (UserLoginBody) o;
-    return Objects.equals(this.authKey, userLoginBody.authKey) &&
-        Objects.equals(this.phone, userLoginBody.phone) &&
-        Objects.equals(this.password, userLoginBody.password);
+    ForgotPasswordInput forgotPasswordInput = (ForgotPasswordInput) o;
+    return Objects.equals(this.authKey, forgotPasswordInput.authKey) &&
+        Objects.equals(this.phone, forgotPasswordInput.phone) &&
+        Objects.equals(this.email, forgotPasswordInput.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authKey, phone, password);
+    return Objects.hash(authKey, phone, email);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UserLoginBody {\n");
+    sb.append("class ForgotPasswordInput {\n");
     
     sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -142,25 +142,25 @@ public class UserLoginBody implements Parcelable {
   public void writeToParcel(Parcel out, int flags) {
     out.writeValue(authKey);
     out.writeValue(phone);
-    out.writeValue(password);
+    out.writeValue(email);
   }
 
-  UserLoginBody(Parcel in) {
+  ForgotPasswordInput(Parcel in) {
     authKey = (String)in.readValue(null);
     phone = (String)in.readValue(null);
-    password = (String)in.readValue(null);
+    email = (String)in.readValue(null);
   }
 
   public int describeContents() {
     return 0;
   }
 
-  public static final Parcelable.Creator<UserLoginBody> CREATOR = new Parcelable.Creator<UserLoginBody>() {
-    public UserLoginBody createFromParcel(Parcel in) {
-      return new UserLoginBody(in);
+  public static final Parcelable.Creator<ForgotPasswordInput> CREATOR = new Parcelable.Creator<ForgotPasswordInput>() {
+    public ForgotPasswordInput createFromParcel(Parcel in) {
+      return new ForgotPasswordInput(in);
     }
-    public UserLoginBody[] newArray(int size) {
-      return new UserLoginBody[size];
+    public ForgotPasswordInput[] newArray(int size) {
+      return new ForgotPasswordInput[size];
     }
   };
 }

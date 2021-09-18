@@ -15,6 +15,7 @@ import in.co.booksnmore.api.model.CashInput;
 import in.co.booksnmore.api.model.CategoriesData;
 import in.co.booksnmore.api.model.DeliveryCostData;
 import in.co.booksnmore.api.model.ErrorData;
+import in.co.booksnmore.api.model.ForgotPasswordInput;
 import in.co.booksnmore.api.model.GetAuthKeyRespone;
 import in.co.booksnmore.api.model.ISBNInput;
 import in.co.booksnmore.api.model.InlineResponse200;
@@ -26,6 +27,7 @@ import in.co.booksnmore.api.model.PasswordUpdateInput;
 import in.co.booksnmore.api.model.PlanActionInput;
 import in.co.booksnmore.api.model.PlanInfo;
 import in.co.booksnmore.api.model.ReportInput;
+import in.co.booksnmore.api.model.ResetPasswordInput;
 import in.co.booksnmore.api.model.SearchBody;
 import in.co.booksnmore.api.model.SearchData;
 import in.co.booksnmore.api.model.SubstituteBookData;
@@ -755,6 +757,19 @@ public class DefaultApiTest {
     /**
      * 
      *
+     * Forgot password
+     */
+    @Test
+    public void postForgotPasswordTest() {
+        ForgotPasswordInput body = null;
+        // BaseError response = api.postForgotPassword(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
      * Get Delivery Cost
      */
     @Test
@@ -865,6 +880,19 @@ public class DefaultApiTest {
     public void postReserveBookTest() {
         MemberActionInput body = null;
         // MemberData response = api.postReserveBook(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Reset Password
+     */
+    @Test
+    public void postResetPasswordTest() {
+        ResetPasswordInput body = null;
+        // BaseError response = api.postResetPassword(body);
 
         // TODO: test validations
     }

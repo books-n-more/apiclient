@@ -28,19 +28,13 @@ import android.os.Parcel;
  * UserInfo
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-14T04:05:40.533Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-18T20:12:33.529Z[GMT]")
 public class UserInfo implements Parcelable {
-  @SerializedName("userType")
-  private Integer userType = null;
-
-  @SerializedName("numDeliveries")
-  private Integer numDeliveries = null;
+  @SerializedName("id")
+  private Integer id = null;
 
   @SerializedName("name")
   private String name = null;
-
-  @SerializedName("sex")
-  private String sex = null;
 
   @SerializedName("phone")
   private String phone = null;
@@ -48,14 +42,20 @@ public class UserInfo implements Parcelable {
   @SerializedName("email")
   private String email = null;
 
+  @SerializedName("sex")
+  private String sex = null;
+
   @SerializedName("address")
   private Address address = null;
 
+  @SerializedName("userType")
+  private Integer userType = null;
+
+  @SerializedName("numDeliveries")
+  private Integer numDeliveries = null;
+
   @SerializedName("borrowStatus")
   private String borrowStatus = null;
-
-  @SerializedName("id")
-  private Integer id = null;
 
   @SerializedName("balanceDue")
   private Integer balanceDue = null;
@@ -68,40 +68,22 @@ public class UserInfo implements Parcelable {
 
   public UserInfo() {
   }
-  public UserInfo userType(Integer userType) {
-    this.userType = userType;
+  public UserInfo id(Integer id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get userType
-   * @return userType
+   * Get id
+   * @return id
   **/
-  @Schema(required = true, description = "")
-  public Integer getUserType() {
-    return userType;
+  @Schema(description = "")
+  public Integer getId() {
+    return id;
   }
 
-  public void setUserType(Integer userType) {
-    this.userType = userType;
-  }
-
-  public UserInfo numDeliveries(Integer numDeliveries) {
-    this.numDeliveries = numDeliveries;
-    return this;
-  }
-
-   /**
-   * Get numDeliveries
-   * @return numDeliveries
-  **/
-  @Schema(required = true, description = "")
-  public Integer getNumDeliveries() {
-    return numDeliveries;
-  }
-
-  public void setNumDeliveries(Integer numDeliveries) {
-    this.numDeliveries = numDeliveries;
+  public void setId(Integer id) {
+    this.id = id;
   }
 
   public UserInfo name(String name) {
@@ -120,24 +102,6 @@ public class UserInfo implements Parcelable {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public UserInfo sex(String sex) {
-    this.sex = sex;
-    return this;
-  }
-
-   /**
-   * Get sex
-   * @return sex
-  **/
-  @Schema(description = "")
-  public String getSex() {
-    return sex;
-  }
-
-  public void setSex(String sex) {
-    this.sex = sex;
   }
 
   public UserInfo phone(String phone) {
@@ -176,6 +140,24 @@ public class UserInfo implements Parcelable {
     this.email = email;
   }
 
+  public UserInfo sex(String sex) {
+    this.sex = sex;
+    return this;
+  }
+
+   /**
+   * Get sex
+   * @return sex
+  **/
+  @Schema(description = "")
+  public String getSex() {
+    return sex;
+  }
+
+  public void setSex(String sex) {
+    this.sex = sex;
+  }
+
   public UserInfo address(Address address) {
     this.address = address;
     return this;
@@ -185,13 +167,49 @@ public class UserInfo implements Parcelable {
    * Get address
    * @return address
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Address getAddress() {
     return address;
   }
 
   public void setAddress(Address address) {
     this.address = address;
+  }
+
+  public UserInfo userType(Integer userType) {
+    this.userType = userType;
+    return this;
+  }
+
+   /**
+   * Get userType
+   * @return userType
+  **/
+  @Schema(description = "")
+  public Integer getUserType() {
+    return userType;
+  }
+
+  public void setUserType(Integer userType) {
+    this.userType = userType;
+  }
+
+  public UserInfo numDeliveries(Integer numDeliveries) {
+    this.numDeliveries = numDeliveries;
+    return this;
+  }
+
+   /**
+   * Get numDeliveries
+   * @return numDeliveries
+  **/
+  @Schema(description = "")
+  public Integer getNumDeliveries() {
+    return numDeliveries;
+  }
+
+  public void setNumDeliveries(Integer numDeliveries) {
+    this.numDeliveries = numDeliveries;
   }
 
   public UserInfo borrowStatus(String borrowStatus) {
@@ -210,24 +228,6 @@ public class UserInfo implements Parcelable {
 
   public void setBorrowStatus(String borrowStatus) {
     this.borrowStatus = borrowStatus;
-  }
-
-  public UserInfo id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @Schema(description = "")
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
   }
 
   public UserInfo balanceDue(Integer balanceDue) {
@@ -294,15 +294,15 @@ public class UserInfo implements Parcelable {
       return false;
     }
     UserInfo userInfo = (UserInfo) o;
-    return Objects.equals(this.userType, userInfo.userType) &&
-        Objects.equals(this.numDeliveries, userInfo.numDeliveries) &&
+    return Objects.equals(this.id, userInfo.id) &&
         Objects.equals(this.name, userInfo.name) &&
-        Objects.equals(this.sex, userInfo.sex) &&
         Objects.equals(this.phone, userInfo.phone) &&
         Objects.equals(this.email, userInfo.email) &&
+        Objects.equals(this.sex, userInfo.sex) &&
         Objects.equals(this.address, userInfo.address) &&
+        Objects.equals(this.userType, userInfo.userType) &&
+        Objects.equals(this.numDeliveries, userInfo.numDeliveries) &&
         Objects.equals(this.borrowStatus, userInfo.borrowStatus) &&
-        Objects.equals(this.id, userInfo.id) &&
         Objects.equals(this.balanceDue, userInfo.balanceDue) &&
         Objects.equals(this.deposit, userInfo.deposit) &&
         Objects.equals(this.numBooks, userInfo.numBooks);
@@ -310,7 +310,7 @@ public class UserInfo implements Parcelable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userType, numDeliveries, name, sex, phone, email, address, borrowStatus, id, balanceDue, deposit, numBooks);
+    return Objects.hash(id, name, phone, email, sex, address, userType, numDeliveries, borrowStatus, balanceDue, deposit, numBooks);
   }
 
 
@@ -319,15 +319,15 @@ public class UserInfo implements Parcelable {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserInfo {\n");
     
-    sb.append("    userType: ").append(toIndentedString(userType)).append("\n");
-    sb.append("    numDeliveries: ").append(toIndentedString(numDeliveries)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    userType: ").append(toIndentedString(userType)).append("\n");
+    sb.append("    numDeliveries: ").append(toIndentedString(numDeliveries)).append("\n");
     sb.append("    borrowStatus: ").append(toIndentedString(borrowStatus)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    balanceDue: ").append(toIndentedString(balanceDue)).append("\n");
     sb.append("    deposit: ").append(toIndentedString(deposit)).append("\n");
     sb.append("    numBooks: ").append(toIndentedString(numBooks)).append("\n");
@@ -348,30 +348,30 @@ public class UserInfo implements Parcelable {
 
 
   public void writeToParcel(Parcel out, int flags) {
-    out.writeValue(userType);
-    out.writeValue(numDeliveries);
+    out.writeValue(id);
     out.writeValue(name);
-    out.writeValue(sex);
     out.writeValue(phone);
     out.writeValue(email);
+    out.writeValue(sex);
     out.writeValue(address);
+    out.writeValue(userType);
+    out.writeValue(numDeliveries);
     out.writeValue(borrowStatus);
-    out.writeValue(id);
     out.writeValue(balanceDue);
     out.writeValue(deposit);
     out.writeValue(numBooks);
   }
 
   UserInfo(Parcel in) {
-    userType = (Integer)in.readValue(null);
-    numDeliveries = (Integer)in.readValue(null);
+    id = (Integer)in.readValue(null);
     name = (String)in.readValue(null);
-    sex = (String)in.readValue(null);
     phone = (String)in.readValue(null);
     email = (String)in.readValue(null);
+    sex = (String)in.readValue(null);
     address = (Address)in.readValue(Address.class.getClassLoader());
+    userType = (Integer)in.readValue(null);
+    numDeliveries = (Integer)in.readValue(null);
     borrowStatus = (String)in.readValue(null);
-    id = (Integer)in.readValue(null);
     balanceDue = (Integer)in.readValue(null);
     deposit = (Integer)in.readValue(null);
     numBooks = (String)in.readValue(null);

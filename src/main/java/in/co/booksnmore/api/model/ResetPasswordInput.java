@@ -24,23 +24,23 @@ import java.io.IOException;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
- * UserLoginBody
+ * ResetPasswordInput
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-18T20:12:33.529Z[GMT]")
-public class UserLoginBody implements Parcelable {
+public class ResetPasswordInput implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;
 
-  @SerializedName("phone")
-  private String phone = null;
+  @SerializedName("token")
+  private String token = null;
 
   @SerializedName("password")
   private String password = null;
 
-  public UserLoginBody() {
+  public ResetPasswordInput() {
   }
-  public UserLoginBody authKey(String authKey) {
+  public ResetPasswordInput authKey(String authKey) {
     this.authKey = authKey;
     return this;
   }
@@ -58,25 +58,25 @@ public class UserLoginBody implements Parcelable {
     this.authKey = authKey;
   }
 
-  public UserLoginBody phone(String phone) {
-    this.phone = phone;
+  public ResetPasswordInput token(String token) {
+    this.token = token;
     return this;
   }
 
    /**
-   * Get phone
-   * @return phone
+   * Get token
+   * @return token
   **/
   @Schema(required = true, description = "")
-  public String getPhone() {
-    return phone;
+  public String getToken() {
+    return token;
   }
 
-  public void setPhone(String phone) {
-    this.phone = phone;
+  public void setToken(String token) {
+    this.token = token;
   }
 
-  public UserLoginBody password(String password) {
+  public ResetPasswordInput password(String password) {
     this.password = password;
     return this;
   }
@@ -103,25 +103,25 @@ public class UserLoginBody implements Parcelable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserLoginBody userLoginBody = (UserLoginBody) o;
-    return Objects.equals(this.authKey, userLoginBody.authKey) &&
-        Objects.equals(this.phone, userLoginBody.phone) &&
-        Objects.equals(this.password, userLoginBody.password);
+    ResetPasswordInput resetPasswordInput = (ResetPasswordInput) o;
+    return Objects.equals(this.authKey, resetPasswordInput.authKey) &&
+        Objects.equals(this.token, resetPasswordInput.token) &&
+        Objects.equals(this.password, resetPasswordInput.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authKey, phone, password);
+    return Objects.hash(authKey, token, password);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UserLoginBody {\n");
+    sb.append("class ResetPasswordInput {\n");
     
     sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -141,13 +141,13 @@ public class UserLoginBody implements Parcelable {
 
   public void writeToParcel(Parcel out, int flags) {
     out.writeValue(authKey);
-    out.writeValue(phone);
+    out.writeValue(token);
     out.writeValue(password);
   }
 
-  UserLoginBody(Parcel in) {
+  ResetPasswordInput(Parcel in) {
     authKey = (String)in.readValue(null);
-    phone = (String)in.readValue(null);
+    token = (String)in.readValue(null);
     password = (String)in.readValue(null);
   }
 
@@ -155,12 +155,12 @@ public class UserLoginBody implements Parcelable {
     return 0;
   }
 
-  public static final Parcelable.Creator<UserLoginBody> CREATOR = new Parcelable.Creator<UserLoginBody>() {
-    public UserLoginBody createFromParcel(Parcel in) {
-      return new UserLoginBody(in);
+  public static final Parcelable.Creator<ResetPasswordInput> CREATOR = new Parcelable.Creator<ResetPasswordInput>() {
+    public ResetPasswordInput createFromParcel(Parcel in) {
+      return new ResetPasswordInput(in);
     }
-    public UserLoginBody[] newArray(int size) {
-      return new UserLoginBody[size];
+    public ResetPasswordInput[] newArray(int size) {
+      return new ResetPasswordInput[size];
     }
   };
 }

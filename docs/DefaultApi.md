@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *https://{host}*
+All URIs are relative to *http://{host}*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -58,6 +58,7 @@ Method | HTTP request | Description
 [**postCreatePlan**](DefaultApi.md#postCreatePlan) | **POST** createPlan | 
 [**postDeletePlan**](DefaultApi.md#postDeletePlan) | **POST** deletePlan | 
 [**postEditMember**](DefaultApi.md#postEditMember) | **POST** editMember | 
+[**postForgotPassword**](DefaultApi.md#postForgotPassword) | **POST** forgotPassword | 
 [**postGetDeliveryCost**](DefaultApi.md#postGetDeliveryCost) | **POST** getDeliveryCost | 
 [**postGetHotBooks**](DefaultApi.md#postGetHotBooks) | **POST** getHotBooks | 
 [**postGetMember**](DefaultApi.md#postGetMember) | **POST** getMember | 
@@ -67,6 +68,7 @@ Method | HTTP request | Description
 [**postModifyPlan**](DefaultApi.md#postModifyPlan) | **POST** modifyPlan | 
 [**postReadyToReturnBook**](DefaultApi.md#postReadyToReturnBook) | **POST** readyToReturnBook | 
 [**postReserveBook**](DefaultApi.md#postReserveBook) | **POST** reserveBook | 
+[**postResetPassword**](DefaultApi.md#postResetPassword) | **POST** resetPassword | 
 [**postRevivePlan**](DefaultApi.md#postRevivePlan) | **POST** revivePlan | 
 [**postSearch**](DefaultApi.md#postSearch) | **POST** search | 
 [**postSuspendPlan**](DefaultApi.md#postSuspendPlan) | **POST** suspendPlan | 
@@ -2620,6 +2622,51 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postForgotPassword"></a>
+# **postForgotPassword**
+> BaseError postForgotPassword(body)
+
+
+
+Forgot password
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+ForgotPasswordInput body = new ForgotPasswordInput(); // ForgotPasswordInput | 
+try {
+    BaseError result = apiInstance.postForgotPassword(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postForgotPassword");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ForgotPasswordInput**](ForgotPasswordInput.md)|  | [optional]
+
+### Return type
+
+[**BaseError**](BaseError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postGetDeliveryCost"></a>
 # **postGetDeliveryCost**
 > DeliveryCostData postGetDeliveryCost(body)
@@ -3015,6 +3062,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MemberData**](MemberData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postResetPassword"></a>
+# **postResetPassword**
+> BaseError postResetPassword(body)
+
+
+
+Reset Password
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+ResetPasswordInput body = new ResetPasswordInput(); // ResetPasswordInput | 
+try {
+    BaseError result = apiInstance.postResetPassword(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postResetPassword");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ResetPasswordInput**](ResetPasswordInput.md)|  | [optional]
+
+### Return type
+
+[**BaseError**](BaseError.md)
 
 ### Authorization
 

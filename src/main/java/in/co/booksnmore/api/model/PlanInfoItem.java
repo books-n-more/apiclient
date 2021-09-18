@@ -27,7 +27,7 @@ import android.os.Parcel;
  * PlanInfoItem
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-14T04:05:40.533Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-18T20:12:33.529Z[GMT]")
 public class PlanInfoItem implements Parcelable {
   @SerializedName("cost")
   private Integer cost = null;

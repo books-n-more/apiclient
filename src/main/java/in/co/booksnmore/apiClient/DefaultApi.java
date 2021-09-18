@@ -22,6 +22,7 @@ import in.co.booksnmore.api.model.CashInput;
 import in.co.booksnmore.api.model.CategoriesData;
 import in.co.booksnmore.api.model.DeliveryCostData;
 import in.co.booksnmore.api.model.ErrorData;
+import in.co.booksnmore.api.model.ForgotPasswordInput;
 import in.co.booksnmore.api.model.GetAuthKeyRespone;
 import in.co.booksnmore.api.model.ISBNInput;
 import in.co.booksnmore.api.model.InlineResponse200;
@@ -33,6 +34,7 @@ import in.co.booksnmore.api.model.PasswordUpdateInput;
 import in.co.booksnmore.api.model.PlanActionInput;
 import in.co.booksnmore.api.model.PlanInfo;
 import in.co.booksnmore.api.model.ReportInput;
+import in.co.booksnmore.api.model.ResetPasswordInput;
 import in.co.booksnmore.api.model.SearchBody;
 import in.co.booksnmore.api.model.SearchData;
 import in.co.booksnmore.api.model.SubstituteBookData;
@@ -827,6 +829,20 @@ public interface DefaultApi {
 
   /**
    * 
+   * Forgot password
+   * @param body  (optional)
+   * @return Call&lt;BaseError&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("forgotPassword")
+  Call<BaseError> postForgotPassword(
+                    @retrofit2.http.Body ForgotPasswordInput body    
+  );
+
+  /**
+   * 
    * Get Delivery Cost
    * @param body  (optional)
    * @return Call&lt;DeliveryCostData&gt;
@@ -949,6 +965,20 @@ public interface DefaultApi {
   @POST("reserveBook")
   Call<MemberData> postReserveBook(
                     @retrofit2.http.Body MemberActionInput body    
+  );
+
+  /**
+   * 
+   * Reset Password
+   * @param body  (optional)
+   * @return Call&lt;BaseError&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("resetPassword")
+  Call<BaseError> postResetPassword(
+                    @retrofit2.http.Body ResetPasswordInput body    
   );
 
   /**

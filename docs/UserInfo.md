@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userType** | **Integer** |  | 
-**numDeliveries** | **Integer** |  | 
+**id** | **Integer** |  |  [optional]
 **name** | **String** |  | 
-**sex** | **String** |  |  [optional]
 **phone** | **String** |  | 
 **email** | **String** |  | 
-**address** | [**Address**](Address.md) |  | 
+**sex** | **String** |  |  [optional]
+**address** | [**Address**](Address.md) |  |  [optional]
+**userType** | **Integer** |  |  [optional]
+**numDeliveries** | **Integer** |  |  [optional]
 **borrowStatus** | **String** |  |  [optional]
-**id** | **Integer** |  |  [optional]
 **balanceDue** | **Integer** |  |  [optional]
 **deposit** | **Integer** |  |  [optional]
 **numBooks** | **String** |  |  [optional]
