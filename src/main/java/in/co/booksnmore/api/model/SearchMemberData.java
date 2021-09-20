@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import in.co.booksnmore.api.model.BookData;
+import in.co.booksnmore.api.model.UserInfo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,20 +27,20 @@ import java.util.List;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
- * AdminBookListData
+ * SearchMemberData
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-20T08:57:53.959Z[GMT]")
-public class AdminBookListData implements Parcelable {
+public class SearchMemberData implements Parcelable {
   @SerializedName("errorCode")
   private Integer errorCode = null;
 
-  @SerializedName("books")
-  private List<BookData> books = null;
+  @SerializedName("members")
+  private List<UserInfo> members = null;
 
-  public AdminBookListData() {
+  public SearchMemberData() {
   }
-  public AdminBookListData errorCode(Integer errorCode) {
+  public SearchMemberData errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -49,7 +49,7 @@ public class AdminBookListData implements Parcelable {
    * Get errorCode
    * @return errorCode
   **/
-  @Schema(required = true, description = "")
+  @Schema(description = "")
   public Integer getErrorCode() {
     return errorCode;
   }
@@ -58,30 +58,30 @@ public class AdminBookListData implements Parcelable {
     this.errorCode = errorCode;
   }
 
-  public AdminBookListData books(List<BookData> books) {
-    this.books = books;
+  public SearchMemberData members(List<UserInfo> members) {
+    this.members = members;
     return this;
   }
 
-  public AdminBookListData addBooksItem(BookData booksItem) {
-    if (this.books == null) {
-      this.books = new ArrayList<BookData>();
+  public SearchMemberData addMembersItem(UserInfo membersItem) {
+    if (this.members == null) {
+      this.members = new ArrayList<UserInfo>();
     }
-    this.books.add(booksItem);
+    this.members.add(membersItem);
     return this;
   }
 
    /**
-   * Get books
-   * @return books
+   * Get members
+   * @return members
   **/
   @Schema(description = "")
-  public List<BookData> getBooks() {
-    return books;
+  public List<UserInfo> getMembers() {
+    return members;
   }
 
-  public void setBooks(List<BookData> books) {
-    this.books = books;
+  public void setMembers(List<UserInfo> members) {
+    this.members = members;
   }
 
 
@@ -93,24 +93,24 @@ public class AdminBookListData implements Parcelable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AdminBookListData adminBookListData = (AdminBookListData) o;
-    return Objects.equals(this.errorCode, adminBookListData.errorCode) &&
-        Objects.equals(this.books, adminBookListData.books);
+    SearchMemberData searchMemberData = (SearchMemberData) o;
+    return Objects.equals(this.errorCode, searchMemberData.errorCode) &&
+        Objects.equals(this.members, searchMemberData.members);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errorCode, books);
+    return Objects.hash(errorCode, members);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AdminBookListData {\n");
+    sb.append("class SearchMemberData {\n");
     
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-    sb.append("    books: ").append(toIndentedString(books)).append("\n");
+    sb.append("    members: ").append(toIndentedString(members)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -129,24 +129,24 @@ public class AdminBookListData implements Parcelable {
 
   public void writeToParcel(Parcel out, int flags) {
     out.writeValue(errorCode);
-    out.writeValue(books);
+    out.writeValue(members);
   }
 
-  AdminBookListData(Parcel in) {
+  SearchMemberData(Parcel in) {
     errorCode = (Integer)in.readValue(null);
-    books = (List<BookData>)in.readValue(BookData.class.getClassLoader());
+    members = (List<UserInfo>)in.readValue(UserInfo.class.getClassLoader());
   }
 
   public int describeContents() {
     return 0;
   }
 
-  public static final Parcelable.Creator<AdminBookListData> CREATOR = new Parcelable.Creator<AdminBookListData>() {
-    public AdminBookListData createFromParcel(Parcel in) {
-      return new AdminBookListData(in);
+  public static final Parcelable.Creator<SearchMemberData> CREATOR = new Parcelable.Creator<SearchMemberData>() {
+    public SearchMemberData createFromParcel(Parcel in) {
+      return new SearchMemberData(in);
     }
-    public AdminBookListData[] newArray(int size) {
-      return new AdminBookListData[size];
+    public SearchMemberData[] newArray(int size) {
+      return new SearchMemberData[size];
     }
   };
 }

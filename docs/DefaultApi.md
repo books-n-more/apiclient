@@ -45,6 +45,7 @@ Method | HTTP request | Description
 [**postAdminReturned**](DefaultApi.md#postAdminReturned) | **POST** admin/returned | 
 [**postAdminRevivePlan**](DefaultApi.md#postAdminRevivePlan) | **POST** admin/revivePlan | 
 [**postAdminSearch**](DefaultApi.md#postAdminSearch) | **POST** admin/search | 
+[**postAdminSearchMember**](DefaultApi.md#postAdminSearchMember) | **POST** admin/searchMember | 
 [**postAdminSubstitute**](DefaultApi.md#postAdminSubstitute) | **POST** admin/substitute | 
 [**postAdminSuspendPlan**](DefaultApi.md#postAdminSuspendPlan) | **POST** admin/suspendPlan | 
 [**postAdminTransactionReport**](DefaultApi.md#postAdminTransactionReport) | **POST** admin/transactionReport | 
@@ -2027,6 +2028,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchData**](SearchData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postAdminSearchMember"></a>
+# **postAdminSearchMember**
+> SearchMemberData postAdminSearchMember(body)
+
+
+
+Admin search member
+
+### Example
+```java
+// Import classes:
+//import in.co.booksnmore.api.ApiException;
+//import in.co.booksnmore.apiClient.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+SearchMemberInput body = new SearchMemberInput(); // SearchMemberInput | 
+try {
+    SearchMemberData result = apiInstance.postAdminSearchMember(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#postAdminSearchMember");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SearchMemberInput**](SearchMemberInput.md)|  | [optional]
+
+### Return type
+
+[**SearchMemberData**](SearchMemberData.md)
 
 ### Authorization
 

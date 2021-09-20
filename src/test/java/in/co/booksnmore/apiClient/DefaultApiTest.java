@@ -30,6 +30,8 @@ import in.co.booksnmore.api.model.ReportInput;
 import in.co.booksnmore.api.model.ResetPasswordInput;
 import in.co.booksnmore.api.model.SearchBody;
 import in.co.booksnmore.api.model.SearchData;
+import in.co.booksnmore.api.model.SearchMemberData;
+import in.co.booksnmore.api.model.SearchMemberInput;
 import in.co.booksnmore.api.model.SubstituteBookData;
 import in.co.booksnmore.api.model.TransactionReport;
 import in.co.booksnmore.api.model.UserLoginBody;
@@ -581,6 +583,19 @@ public class DefaultApiTest {
     public void postAdminSearchTest() {
         SearchBody body = null;
         // SearchData response = api.postAdminSearch(body);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * Admin search member
+     */
+    @Test
+    public void postAdminSearchMemberTest() {
+        SearchMemberInput body = null;
+        // SearchMemberData response = api.postAdminSearchMember(body);
 
         // TODO: test validations
     }

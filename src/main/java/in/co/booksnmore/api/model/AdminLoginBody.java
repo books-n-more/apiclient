@@ -27,7 +27,7 @@ import android.os.Parcel;
  * AdminLoginBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-18T20:12:33.529Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-20T08:57:53.959Z[GMT]")
 public class AdminLoginBody implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;

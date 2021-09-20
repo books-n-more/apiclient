@@ -37,6 +37,8 @@ import in.co.booksnmore.api.model.ReportInput;
 import in.co.booksnmore.api.model.ResetPasswordInput;
 import in.co.booksnmore.api.model.SearchBody;
 import in.co.booksnmore.api.model.SearchData;
+import in.co.booksnmore.api.model.SearchMemberData;
+import in.co.booksnmore.api.model.SearchMemberInput;
 import in.co.booksnmore.api.model.SubstituteBookData;
 import in.co.booksnmore.api.model.TransactionReport;
 import in.co.booksnmore.api.model.UserLoginBody;
@@ -643,6 +645,20 @@ public interface DefaultApi {
   @POST("admin/search")
   Call<SearchData> postAdminSearch(
                     @retrofit2.http.Body SearchBody body    
+  );
+
+  /**
+   * 
+   * Admin search member
+   * @param body  (optional)
+   * @return Call&lt;SearchMemberData&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("admin/searchMember")
+  Call<SearchMemberData> postAdminSearchMember(
+                    @retrofit2.http.Body SearchMemberInput body    
   );
 
   /**

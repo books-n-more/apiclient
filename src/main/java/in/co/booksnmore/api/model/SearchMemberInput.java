@@ -21,25 +21,23 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import android.os.Parcelable;
 import android.os.Parcel;
 /**
- * BookListBody
+ * SearchMemberInput
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-20T08:57:53.959Z[GMT]")
-public class BookListBody implements Parcelable {
+public class SearchMemberInput implements Parcelable {
   @SerializedName("authKey")
   private String authKey = null;
 
-  @SerializedName("bookIds")
-  private List<Integer> bookIds = null;
+  @SerializedName("search")
+  private String search = null;
 
-  public BookListBody() {
+  public SearchMemberInput() {
   }
-  public BookListBody authKey(String authKey) {
+  public SearchMemberInput authKey(String authKey) {
     this.authKey = authKey;
     return this;
   }
@@ -57,30 +55,22 @@ public class BookListBody implements Parcelable {
     this.authKey = authKey;
   }
 
-  public BookListBody bookIds(List<Integer> bookIds) {
-    this.bookIds = bookIds;
-    return this;
-  }
-
-  public BookListBody addBookIdsItem(Integer bookIdsItem) {
-    if (this.bookIds == null) {
-      this.bookIds = new ArrayList<Integer>();
-    }
-    this.bookIds.add(bookIdsItem);
+  public SearchMemberInput search(String search) {
+    this.search = search;
     return this;
   }
 
    /**
-   * Get bookIds
-   * @return bookIds
+   * Get search
+   * @return search
   **/
   @Schema(description = "")
-  public List<Integer> getBookIds() {
-    return bookIds;
+  public String getSearch() {
+    return search;
   }
 
-  public void setBookIds(List<Integer> bookIds) {
-    this.bookIds = bookIds;
+  public void setSearch(String search) {
+    this.search = search;
   }
 
 
@@ -92,24 +82,24 @@ public class BookListBody implements Parcelable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BookListBody bookListBody = (BookListBody) o;
-    return Objects.equals(this.authKey, bookListBody.authKey) &&
-        Objects.equals(this.bookIds, bookListBody.bookIds);
+    SearchMemberInput searchMemberInput = (SearchMemberInput) o;
+    return Objects.equals(this.authKey, searchMemberInput.authKey) &&
+        Objects.equals(this.search, searchMemberInput.search);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authKey, bookIds);
+    return Objects.hash(authKey, search);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BookListBody {\n");
+    sb.append("class SearchMemberInput {\n");
     
     sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
-    sb.append("    bookIds: ").append(toIndentedString(bookIds)).append("\n");
+    sb.append("    search: ").append(toIndentedString(search)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -128,24 +118,24 @@ public class BookListBody implements Parcelable {
 
   public void writeToParcel(Parcel out, int flags) {
     out.writeValue(authKey);
-    out.writeValue(bookIds);
+    out.writeValue(search);
   }
 
-  BookListBody(Parcel in) {
+  SearchMemberInput(Parcel in) {
     authKey = (String)in.readValue(null);
-    bookIds = (List<Integer>)in.readValue(null);
+    search = (String)in.readValue(null);
   }
 
   public int describeContents() {
     return 0;
   }
 
-  public static final Parcelable.Creator<BookListBody> CREATOR = new Parcelable.Creator<BookListBody>() {
-    public BookListBody createFromParcel(Parcel in) {
-      return new BookListBody(in);
+  public static final Parcelable.Creator<SearchMemberInput> CREATOR = new Parcelable.Creator<SearchMemberInput>() {
+    public SearchMemberInput createFromParcel(Parcel in) {
+      return new SearchMemberInput(in);
     }
-    public BookListBody[] newArray(int size) {
-      return new BookListBody[size];
+    public SearchMemberInput[] newArray(int size) {
+      return new SearchMemberInput[size];
     }
   };
 }
