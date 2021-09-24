@@ -3,5 +3,5 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**isbn** | **String** |  | 
+**ISBN** | **String** |  | 
 **authKey** | **String** |  | 

@@ -27,32 +27,32 @@ import android.os.Parcel;
  * ISBNInput
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-22T05:00:00.161Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-09-24T17:00:08.994Z[GMT]")
 public class ISBNInput implements Parcelable {
-  @SerializedName("isbn")
-  private String isbn = null;
+  @SerializedName("ISBN")
+  private String ISBN = null;
 
   @SerializedName("authKey")
   private String authKey = null;
 
   public ISBNInput() {
   }
-  public ISBNInput isbn(String isbn) {
-    this.isbn = isbn;
+  public ISBNInput ISBN(String ISBN) {
+    this.ISBN = ISBN;
     return this;
   }
 
    /**
-   * Get isbn
-   * @return isbn
+   * Get ISBN
+   * @return ISBN
   **/
   @Schema(required = true, description = "")
-  public String getIsbn() {
-    return isbn;
+  public String getISBN() {
+    return ISBN;
   }
 
-  public void setIsbn(String isbn) {
-    this.isbn = isbn;
+  public void setISBN(String ISBN) {
+    this.ISBN = ISBN;
   }
 
   public ISBNInput authKey(String authKey) {
@@ -83,13 +83,13 @@ public class ISBNInput implements Parcelable {
       return false;
     }
     ISBNInput isBNInput = (ISBNInput) o;
-    return Objects.equals(this.isbn, isBNInput.isbn) &&
+    return Objects.equals(this.ISBN, isBNInput.ISBN) &&
         Objects.equals(this.authKey, isBNInput.authKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isbn, authKey);
+    return Objects.hash(ISBN, authKey);
   }
 
 
@@ -98,7 +98,7 @@ public class ISBNInput implements Parcelable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ISBNInput {\n");
     
-    sb.append("    isbn: ").append(toIndentedString(isbn)).append("\n");
+    sb.append("    ISBN: ").append(toIndentedString(ISBN)).append("\n");
     sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -117,12 +117,12 @@ public class ISBNInput implements Parcelable {
 
 
   public void writeToParcel(Parcel out, int flags) {
-    out.writeValue(isbn);
+    out.writeValue(ISBN);
     out.writeValue(authKey);
   }
 
   ISBNInput(Parcel in) {
-    isbn = (String)in.readValue(null);
+    ISBN = (String)in.readValue(null);
     authKey = (String)in.readValue(null);
   }
 
